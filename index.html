@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Klimasun</title>
+    <script>
+        const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (lang && !lang.startsWith('tr')) {
+            window.location.replace('pages/en/home.html');
+        } else {
+            window.location.replace('pages/anasayfa.html');
+        }
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=pages/anasayfa.html">
+    </noscript>
+</head>
+<body>
+    <p>Y\u00f6nlendiriliyorsunuz... <a href="pages/anasayfa.html">Ana Sayfa</a></p>
+</body>
+</html>
+

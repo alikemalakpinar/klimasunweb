@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Home</title>
+    <link rel="stylesheet" href="../anasayfa.css">
+    <link rel="stylesheet" href="../../components/header.css">
+    <link rel="stylesheet" href="../../components/footer.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main class="page-content">
+        <section class="hero-section">
+            <h1>Welcome to Klimasun</h1>
+            <p>Your reliable source for industrial automation and climate solutions.</p>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../../components/header.js"></script>
+    <script src="../../js/enhanced-rfq-button.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        document.getElementById('header-placeholder').innerHTML = '';
+        fetch('../../components/header.html').then(r=>r.text()).then(t=>{document.getElementById('header-placeholder').innerHTML=t;});
+        document.getElementById('footer-placeholder').innerHTML = '';
+        fetch('../../components/footer.html').then(r=>r.text()).then(t=>{document.getElementById('footer-placeholder').innerHTML=t;});
+    });
+    </script>
+</body>
+</html>
