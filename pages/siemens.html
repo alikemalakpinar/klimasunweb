@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Siemens | Gelişmiş Ürün Sayfası</title>
+    <link rel="stylesheet" href="siemens.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="brand-hero">
+        <div class="container">
+            <div class="brand-logo">
+                <img src="../images/logos/siemens-white.svg" alt="Siemens Logo">
+            </div>
+            <h1>SIEMENS</h1>
+            <p class="hero-subtitle">Endüstriyel Otomasyon Çözümleri</p>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+        <div class="container">
+            <a href="/anasayfa">Anasayfa</a>
+            <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+            <a href="/ureticiler">Ürünlerimiz</a>
+            <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+            <span class="current">Siemens</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="brand-description">
+                <h2>SIEMENS</h2>
+                <p>Obso Automation, HMI, PLC, motor, sensör, sürücü ve kontrolörleri içeren kapsamlı Siemens otomasyon parçaları sunar. Dayanıklılık ve inovasyon ile tanınan Siemens çözümleri, üretim verimliliğini artırmak ve kesinti süresini en aza indirmek için tasarlanmıştır. İşletmenizin sorunsuz ve kârlı çalışmasını sağlayan hem aktif hem de kullanımdan kaldırılmış orijinal Siemens parçaları sunuyoruz. İster makinelerinizi tamir etmeniz, ister sisteminizi yükseltmeniz gereksin, Siemens otomasyon bileşenleri eşsiz performans ve güvenilirlik sunar.</p>
+            </div>
+
+            <!-- Product Filter Section -->
+            <div class="product-filter">
+                <div class="filter-left">
+                    <span class="total-products">Tüm Ürünler</span>
+                    <div class="per-page">
+                        <label for="per-page-select">Sayfa Başına</label>
+                        <select id="per-page-select" aria-label="Sayfa başına ürün sayısı">
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+                    <button class="mobile-filter-toggle" aria-label="Filtreleri göster">
+                        <i class="fas fa-filter"></i> Filtrele
+                    </button>
+                </div>
+                <div class="filter-right">
+                    <span>Görünüm</span>
+                    <button class="grid-view active" aria-label="Izgara görünümü" title="Izgara görünümü">
+                        <i class="fas fa-th" aria-hidden="true"></i>
+                    </button>
+                    <button class="list-view" aria-label="Liste görünümü" title="Liste görünümü">
+                        <i class="fas fa-list" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Advanced Filters (Desktop) -->
+            <div class="desktop-filters">
+                <div class="advanced-filters">
+                    <div class="filter-section">
+                        <div class="filter-section-title">
+                            <span>Kategoriler</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="filter-options">
+                            <select id="category-filter">
+                                <option value="">Tüm Kategoriler</option>
+                                <option value="PLC">PLC</option>
+                                <option value="HMI">HMI</option>
+                                <option value="Drive">Sürücü</option>
+                                <option value="Motor">Motor</option>
+                                <option value="Sensor">Sensor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <div class="filter-section-title">
+                            <span>Stok Durumu</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="filter-options">
+                            <select id="stock-filter">
+                                <option value="">Tümü</option>
+                                <option value="available">Stokta Var</option>
+                                <option value="outofstock">Tükendi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <div class="filter-section-title">
+                            <span>Arama</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="filter-options">
+                            <div class="product-search">
+                                <input type="text" id="text-filter" placeholder="Ürün kodu veya açıklama..." aria-label="Ürün ara">
+                                <button class="search-button" aria-label="Ara">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Aktif Filtreler -->
+                <div class="active-filters-container">
+                    <div class="active-filters"></div>
+                    <button class="clear-filters" style="display: none;">
+                        <i class="fas fa-times-circle"></i> Filtreleri Temizle
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Filter Panel -->
+            <div class="mobile-filter-panel">
+                <div class="filter-panel-header">
+                    <h3>Filtrele</h3>
+                    <button class="close-filter-panel">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="filter-panel-content">
+                    <div class="filter-section">
+                        <div class="filter-section-title active">
+                            <span>Kategoriler</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="filter-options" style="display: block;">
+                            <select id="category-filter-mobile">
+                                <option value="">Tüm Kategoriler</option>
+                                <option value="PLC">PLC</option>
+                                <option value="HMI">HMI</option>
+                                <option value="Drive">Sürücü</option>
+                                <option value="Motor">Motor</option>
+                                <option value="Sensor">Sensor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <div class="filter-section-title">
+                            <span>Stok Durumu</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="filter-options">
+                            <select id="stock-filter-mobile">
+                                <option value="">Tümü</option>
+                                <option value="available">Stokta Var</option>
+                                <option value="outofstock">Tükendi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <div class="filter-section-title">
+                            <span>Arama</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="filter-options">
+                            <div class="product-search">
+                                <input type="text" id="text-filter-mobile" placeholder="Ürün kodu veya açıklama..." aria-label="Ürün ara">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-panel-footer">
+                    <button class="apply-filters">Filtrele</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Product Item 1 -->
+                <article class="product-item" data-category="PLC">
+                    <div class="product-image">
+                        <img src="../images/products/siemens-plc.jpg" alt="Siemens PLC Controller">
+                        <div class="product-badge">PLC</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>6ES7315-2EH14-0AB0</h3>
+                        <p class="availability"><i class="fas fa-check-circle" aria-hidden="true"></i> Stokta</p>
+                        <p class="description">SIEMENS SIMATIC S7-300 CPU, 256KB çalışma hafızası, 24V DC güç kaynağı</p>
+                        <div class="product-actions">
+                            <button class="quick-quote">Teklif İste</button>
+                            <button class="add-to-favorites" aria-label="Favorilere ekle"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Item 2 -->
+                <article class="product-item" data-category="HMI">
+                    <div class="product-image">
+                        <img src="../images/products/siemens-hmi.jpg" alt="Siemens HMI Touch Panel">
+                        <div class="product-badge">HMI</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>6AV2124-0GC01-0AX0</h3>
+                        <p class="availability"><i class="fas fa-check-circle" aria-hidden="true"></i> Stokta</p>
+                        <p class="description">SIEMENS SIMATIC HMI TP700 Comfort Panel, 7" geniş ekran TFT ekran</p>
+                        <div class="product-actions">
+                            <button class="quick-quote">Teklif İste</button>
+                            <button class="add-to-favorites" aria-label="Favorilere ekle"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Item 3 -->
+                <article class="product-item" data-category="Drive">
+                    <div class="product-image">
+                        <img src="../images/products/siemens-drive.jpg" alt="Siemens Drive Controller">
+                        <div class="product-badge">Sürücü</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>6SL3210-1PE21-1UL0</h3>
+                        <p class="availability"><i class="fas fa-check-circle" aria-hidden="true"></i> Stokta</p>
+                        <p class="description">SIEMENS SINAMICS G120 Güç Modülü, entegre filtreli 5.5kW</p>
+                        <div class="product-actions">
+                            <button class="quick-quote">Teklif İste</button>
+                            <button class="add-to-favorites" aria-label="Favorilere ekle"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Item 4 -->
+                <article class="product-item" data-category="Motor">
+                    <div class="product-image">
+                        <img src="../images/products/siemens-motor.jpg" alt="Siemens Electric Motor">
+                        <div class="product-badge">Motor</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>1LE1001-1DA23-4AA4</h3>
+                        <p class="availability"><i class="fas fa-check-circle" aria-hidden="true"></i> Stokta</p>
+                        <p class="description">SIEMENS MOTOR 1LE1, 3kW, 4 kutuplu, IE2 verimlilik sınıfı</p>
+                        <div class="product-actions">
+                            <button class="quick-quote">Teklif İste</button>
+                            <button class="add-to-favorites" aria-label="Favorilere ekle"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Item 5 - Farklı stok durumu -->
+                <article class="product-item" data-category="Sensor">
+                    <div class="product-image">
+                        <img src="../images/products/siemens-sensor.jpg" alt="Siemens Proximity Sensor">
+                        <div class="product-badge">Sensör</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>3RG4022-0AG31</h3>
+                        <p class="availability out-of-stock"><i class="fas fa-times-circle" aria-hidden="true"></i> Tükendi</p>
+                        <p class="description">SIEMENS Yaklaşım Sensörü, endüktif, 8mm algılama mesafesi</p>
+                        <div class="product-actions">
+                            <button class="notify-stock">Stok Bildirimi</button>
+                            <button class="add-to-favorites" aria-label="Favorilere ekle"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Item 6 -->
+                <article class="product-item" data-category="PLC">
+                    <div class="product-image">
+                        <img src="../images/products/siemens-plc-cpu.jpg" alt="Siemens PLC CPU">
+                        <div class="product-badge">PLC</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>6ES7314-6CG03-0AB0</h3>
+                        <p class="availability"><i class="fas fa-check-circle" aria-hidden="true"></i> Stokta</p>
+                        <p class="description">SIEMENS S7-300 CPU, Counter modülü, 24 giriş/çıkış</p>
+                        <div class="product-actions">
+                            <button class="quick-quote">Teklif İste</button>
+                            <button class="add-to-favorites" aria-label="Favorilere ekle"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination for mobile -->
+            <div class="pagination">
+                <button class="prev-page" disabled><i class="fas fa-chevron-left"></i> Önceki</button>
+                <div class="page-numbers">
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                </div>
+                <button class="next-page">Sonraki <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="siemens.js"></script>
+    <script>
+        $(function () {
+          $("#header-placeholder").load("../components/header.html");
+          $("#footer-placeholder").load("../components/footer.html");
+        });
+      </script>
+      
+</body>
+</html>

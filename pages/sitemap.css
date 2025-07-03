@@ -1,0 +1,827 @@
+/* Genel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f8ff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Harita Container */
+.map-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    overflow: hidden;
+}
+
+/* Harita Arka Planı */
+.map-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e6f2ff;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232ABCFF' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index: -1;
+}
+
+/* Okyanus Dalgaları */
+.ocean-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 18C2 18 4 16 6 16C8 16 10 18 12 18C14 18 16 16 18 16C20 16 22 18 24 18C26 18 28 16 30 16C32 16 34 18 36 18C38 18 40 16 42 16C44 16 46 18 48 18C50 18 52 16 54 16C56 16 58 18 60 18C62 18 64 16 66 16C68 16 70 18 72 18C74 18 76 16 78 16C80 16 82 18 84 18C86 18 88 16 90 16C92 16 94 18 96 18C98 18 100 16 100 16V20H0V18Z' fill='%232ABCFF' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    opacity: 0.7;
+}
+
+/* Dekoratif Elementler */
+.map-decoration {
+    position: absolute;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.compass {
+    top: 80px;
+    right: 80px;
+    width: 100px;
+    height: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23996633' stroke-width='2'/%3E%3Cpath d='M50 5 L55 50 L50 95 L45 50 Z' fill='%23d9534f'/%3E%3Cpath d='M5 50 L50 45 L95 50 L50 55 Z' fill='%235bc0de'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23996633'/%3E%3C/svg%3E");
+    transition: transform 0.5s ease-in-out;
+}
+
+.ship {
+    bottom: 120px;
+    left: 15%;
+    width: 50px;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,25 L20,35 L30,35 L40,25 L30,15 Z' fill='%23996633'/%3E%3Cpath d='M20,35 L20,40 L30,40 L30,35 Z' fill='%23996633'/%3E%3Cpath d='M25,15 L25,35' stroke='%23000' stroke-width='1'/%3E%3Cpath d='M25,15 L25,5 L30,15 Z' fill='%23fff'/%3E%3C/svg%3E");
+    animation: floating 5s ease-in-out infinite;
+}
+
+.mountains {
+    top: 100px;
+    left: 60px;
+    width: 150px;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg width='150' height='80' viewBox='0 0 150 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 L30,30 L45,50 L60,10 L80,40 L100,20 L120,50 L150,80 Z' fill='%23a67c52' fill-opacity='0.3'/%3E%3Cpath d='M30,30 L35,25 L40,30 Z M60,10 L65,5 L70,10 Z M100,20 L105,15 L110,20 Z' fill='white' fill-opacity='0.5'/%3E%3C/svg%3E");
+}
+
+@keyframes floating {
+    0% { transform: translateY(0) rotate(2deg); }
+    50% { transform: translateY(-10px) rotate(-2deg); }
+    100% { transform: translateY(0) rotate(2deg); }
+}
+
+/* Başlık Bölümü */
+.map-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.map-header::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(42, 188, 255, 0.15) 0%, rgba(42, 188, 255, 0) 70%);
+    border-radius: 50%;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    animation: pulse 6s infinite alternate;
+}
+
+.map-header h1 {
+    font-size: 3.5rem;
+    color: #006699;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 3px 3px 0px rgba(42, 188, 255, 0.2);
+    position: relative;
+    display: inline-block;
+}
+
+.map-header h1::before,
+.map-header h1::after {
+    content: '✦';
+    position: absolute;
+    font-size: 2rem;
+    color: #2ABCFF;
+    opacity: 0.5;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.map-header h1::before {
+    left: -40px;
+}
+
+.map-header h1::after {
+    right: -40px;
+}
+
+.map-header p {
+    color: #666;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/* Site Haritası Ana Container */
+.sitemap-container {
+    position: relative;
+    margin: 0 auto;
+    transition: transform 0.5s ease;
+    transform-origin: center;
+}
+
+/* Kıta Stili */
+.continent {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 249, 235, 0.8);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border: 3px dashed #c9a66b;
+    transition: all 0.5s ease;
+}
+
+.continent::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    border: 2px dotted #e6bf8a;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.continent::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 22 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23996633' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index: -1;
+}
+
+/* Kıta Başlığı */
+.continent-title {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #006699, #2ABCFF);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0, 102, 153, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.continent-title i {
+    font-size: 1.8rem;
+    animation: spin 20s linear infinite;
+}
+
+/* Adalar (Ana Kategoriler) */
+.island {
+    position: absolute;
+    width: 160px;
+    height: 140px;
+    background: #fff;
+    border-radius: 60% 40% 50% 50% / 50% 40% 60% 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    border: 2px solid transparent;
+    z-index: 2;
+}
+
+.island::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 60% 40% 50% 50% / 50% 40% 60% 50%;
+    border: 2px dotted rgba(42, 188, 255, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.island:hover::before {
+    opacity: 1;
+}
+
+.island-hover, 
+.island:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+}
+
+/* Konum İşaretleyici */
+.location-marker {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #FF5722;
+    border-radius: 50% 50% 0 50%;
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: 0 2px 5px rgba(255, 87, 34, 0.3);
+    z-index: 1;
+}
+
+.location-marker::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+/* Ada Başlığı */
+.island-title {
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.island-title i {
+    display: block;
+    font-size: 2rem;
+    color: #2ABCFF;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.island-title a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.island-title a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #2ABCFF;
+    transition: width 0.3s ease;
+}
+
+.island:hover .island-title a::after {
+    width: 100%;
+}
+
+.island:hover .island-title i {
+    transform: scale(1.2);
+    color: #FF5722;
+}
+
+/* Alt konumlar menüsü */
+.sub-locations {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    width: 220px;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid #e6f2ff;
+}
+
+.sub-locations::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(255, 255, 255, 0.95);
+}
+
+.island.expanded .sub-locations {
+    opacity: 1;
+    visibility: visible;
+    top: 105%;
+}
+
+.sub-locations ul {
+    list-style: none;
+}
+
+.sub-locations li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #e6f2ff;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.sub-locations li:last-child {
+    border-bottom: none;
+}
+
+.sub-locations li i {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #2ABCFF;
+    width: 20px;
+    text-align: center;
+}
+
+.sub-locations li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.sub-locations li:hover {
+    transform: translateX(5px);
+}
+
+.sub-locations li:hover a {
+    color: #006699;
+}
+
+/* Konumlandırma - adaların yerleşimi */
+.home-island {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #e3f7ff;
+}
+
+.products-island {
+    top: 30%;
+    left: 20%;
+    background: #e6ffe6;
+}
+
+.manufacturers-island {
+    top: 25%;
+    right: 20%;
+    background: #fff3e3;
+}
+
+.about-island {
+    bottom: 30%;
+    left: 25%;
+    background: #fff0f5;
+}
+
+.contact-island {
+    bottom: 25%;
+    right: 25%;
+    background: #f2e3ff;
+}
+
+.blog-island {
+    top: 65%;
+    left: 25%;
+    background: #e3ffe3;
+}
+
+.others-island {
+    top: 60%;
+    right: 20%;
+    background: #f0f0f0;
+}
+
+/* Deniz Yolları (Bağlantılar) */
+.sea-routes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.route {
+    position: absolute;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(42, 188, 255, 0.3) 0%, rgba(42, 188, 255, 0.7) 50%, rgba(42, 188, 255, 0.3) 100%);
+    transform-origin: left center;
+    z-index: 1;
+}
+
+.route::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 20px;
+    height: 7px;
+    background: rgba(42, 188, 255, 0.5);
+    border-radius: 4px;
+    animation: routeParticle 3s linear infinite;
+    opacity: 0;
+}
+
+@keyframes routeParticle {
+    0% { left: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+/* Harita Lejantı */
+.map-legend {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    width: 220px;
+    z-index: 10;
+    border: 2px solid #e6f2ff;
+}
+
+.legend-title {
+    font-weight: 700;
+    color: #006699;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e6f2ff;
+    text-align: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.legend-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.main-icon {
+    background: rgba(255, 249, 235, 0.8);
+    border: 1px dashed #c9a66b;
+}
+
+.island-icon {
+    background: #fff;
+    border: 1px solid #2ABCFF;
+}
+
+.route-icon {
+    background: linear-gradient(90deg, rgba(42, 188, 255, 0.3) 0%, rgba(42, 188, 255, 0.7) 50%, rgba(42, 188, 255, 0.3) 100%);
+    height: 4px;
+    margin-top: 8px;
+}
+
+.legend-note {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+}
+
+/* Harita Kontrolleri */
+.map-controls {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+.map-controls button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #006699;
+}
+
+.map-controls button:hover {
+    background: #2ABCFF;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Yeni Konum İşareti */
+.new-location::after {
+    content: 'Yeni';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #FF5722;
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    z-index: 5;
+    animation: pulse-hint 2s infinite;
+    box-shadow: 0 3px 10px rgba(255, 87, 34, 0.3);
+}
+
+@keyframes pulse-hint {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Aktif Sayfa İşareti */
+.current-location {
+    border-color: #2ABCFF;
+    box-shadow: 0 0 0 4px rgba(42, 188, 255, 0.3);
+}
+
+.current-location::after {
+    content: '✓';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    background: #2ABCFF;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 5;
+    box-shadow: 0 3px 10px rgba(42, 188, 255, 0.3);
+}
+
+/* Konfeti Parçacık Stili */
+.confetti-particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Animasyonlar */
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.5;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Deniz Yolları Konumlandırmaları */
+.home-products {
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+.home-manufacturers {
+    top: 45%;
+    left: 50%;
+    width: 220px;
+    transform: translate(-50%, -45%) rotate(30deg);
+}
+
+.home-about {
+    top: 60%;
+    left: 45%;
+    width: 180px;
+    transform: translate(-45%, -60%) rotate(-45deg);
+}
+
+.home-contact {
+    top: 55%;
+    left: 55%;
+    width: 200px;
+    transform: translate(-55%, -55%) rotate(45deg);
+}
+
+.home-blog {
+    top: 65%;
+    left: 40%;
+    width: 150px;
+    transform: translate(-40%, -65%) rotate(-15deg);
+}
+
+.home-others {
+    top: 60%;
+    left: 60%;
+    width: 150px;
+    transform: translate(-60%, -60%) rotate(20deg);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1200px) {
+    .continent {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .map-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .continent {
+        max-width: 800px;
+        height: 500px;
+    }
+    
+    .island {
+        width: 130px;
+        height: 110px;
+    }
+    
+    .compass {
+        width: 80px;
+        height: 80px;
+        top: 60px;
+        right: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        padding: 20px;
+    }
+    
+    .map-header h1 {
+        font-size: 2rem;
+    }
+    
+    .map-header h1::before,
+    .map-header h1::after {
+        display: none;
+    }
+    
+    .continent {
+        max-width: 100%;
+        height: auto;
+        min-height: 600px;
+        border-radius: 30px;
+    }
+    
+    .island {
+        width: 100px;
+        height: 90px;
+    }
+    
+    .island-title a {
+        font-size: 0.9rem;
+    }
+    
+    .sub-locations {
+        width: 180px;
+    }
+    
+    .map-legend, .map-controls {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        bottom: auto;
+        margin: 20px auto;
+    }
+    
+    .map-controls {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .continent {
+        min-height: 500px;
+    }
+    
+    .island {
+        width: 80px;
+        height: 70px;
+    }
+    
+    .island-title i {
+        font-size: 1.5rem;
+    }
+    
+    .island-title a {
+        font-size: 0.8rem;
+    }
+    
+    .compass, .mountains {
+        display: none;
+    }
+}
+
+/* İnteraktif Dokunuşlar */
+.map-header h1:hover {
+    background: linear-gradient(90deg, #006699, #2ABCFF, #006699);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 3s ease infinite;
+    background-size: 200% auto;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
+/* Eski tarayıcılar için uyumluluk */
+@supports not (backdrop-filter: blur(10px)) {
+    .sub-locations {
+        background: rgba(255, 255, 255, 0.95);
+    }
+    
+    .map-legend {
+        background: rgba(255, 255, 255, 0.95);
+    }
+}

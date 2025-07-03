@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Allen Bradley</title>
+    <link rel="stylesheet" href="allenbradley.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="brand-hero">
+        <h1>ALLEN BRADLEY</h1>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/anasayfa">Anasayfa</a>
+            <span>&gt;</span>
+            <a href="/ureticiler">Ürünlerimiz</a>
+            <span>&gt;</span>
+            <span>Allen Bradley</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="brand-description">
+                <h2>ALLEN BRADLEY</h2>
+                <p>Obso Automation offers high-quality Allen Bradley automation parts including HMI, PLCs, motors, sensors, drives, and controllers. With Allen Bradley's industry-leading technology, businesses benefit from seamless integration, energy efficiency, and enhanced safety. Our extensive inventory of genuine Allen Bradley spare parts supports the smooth operation and helps reduce maintenance costs. Trust Obso Automation for fast, reliable access to Allen Bradley solutions that keep your systems performing at their best.</p>
+            </div>
+
+            <!-- Product Filter Section -->
+            <div class="product-filter">
+                <div class="filter-left">
+                    <span>All Products</span>
+                    <div class="per-page">
+                        Per Page
+                        <select>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+                    <div class="product-search">
+                        <input type="text" placeholder="Search by part numbers">
+                    </div>
+                </div>
+                <div class="filter-right">
+                    <span>View</span>
+                    <button class="grid-view active"><i class="fas fa-th"></i></button>
+                    <button class="list-view"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Product Item 1 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/MPL-B4540F-MK24AA.jpg" alt="MPL-B4540F-MK24AA">
+                    </div>
+                    <div class="product-info">
+                        <h3>MPL-B4540F-MK24AA</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">ALLEN BRADLEY SERVO MOTOR [...]</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 2 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/193-EF2AKF.jpg" alt="193-EF2AKF">
+                    </div>
+                    <div class="product-info">
+                        <h3>193-EF2AKF</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">ALLEN BRADLEY OVERLOAD RELAY [...]</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 3 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/5069-IA16.jpg" alt="5069-IA16">
+                    </div>
+                    <div class="product-info">
+                        <h3>5069-IA16</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">ALLEN BRADLEY I/O MODULE [...]</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 4 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/20F1AMC205JNONNNNNN.jpg" alt="20F1AMC205JNONNNNNN">
+                    </div>
+                    <div class="product-info">
+                        <h3>20F1AMC205JNONNNNNN</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">ALLEN BRADLEY DRIVE TECHNOLOG [...]</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Additional products... -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="allenbradley.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("../components/header.html");
+            $("#footer-placeholder").load("../components/footer.html");
+        });
+    </script>
+</body>
+</html>

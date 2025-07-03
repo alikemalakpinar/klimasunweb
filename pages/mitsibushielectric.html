@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Mitsubishi Electric</title>
+    <link rel="stylesheet" href="mitsibushielectric.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="brand-hero">
+        <h1>MITSUBISHI ELECTRIC</h1>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/anasayfa">Anasayfa</a>
+            <span>&gt;</span>
+            <a href="/ureticiler">Ürünlerimiz</a>
+            <span>&gt;</span>
+            <span>Mitsubishi Electric</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="brand-description">
+                <h2>MITSUBISHI ELECTRIC</h2>
+                <p>Klimasun, Mitsubishi Electric'in güvenilir çözüm ortağı olarak, endüstriyel otomasyon ve kontrol sistemleri alanında kapsamlı bir ürün yelpazesi sunmaktadır. Mitsubishi Electric'in yüksek kaliteli PLC'leri, servo sistemleri, HMI'ları ve inverter sürücüleri ile üretim süreçlerinizi optimize edin. İleri teknoloji, hassas kontrol ve güvenilir performans sunan Mitsubishi Electric ürünleri, endüstriyel tesislerinizin verimliliğini ve üretkenliğini artırmak için ideal çözümler sunar.</p>
+            </div>
+
+            <!-- Product Filter Section -->
+            <div class="product-filter">
+                <div class="filter-left">
+                    <span>All Products</span>
+                    <div class="per-page">
+                        Per Page
+                        <select>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+                    <div class="product-search">
+                        <input type="text" placeholder="Search by part numbers">
+                    </div>
+                </div>
+                <div class="filter-right">
+                    <span>View</span>
+                    <button class="grid-view active"><i class="fas fa-th"></i></button>
+                    <button class="list-view"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Product Item 1 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/mitsubishi-plc.jpg" alt="Mitsubishi PLC">
+                    </div>
+                    <div class="product-info">
+                        <h3>FX5U-32MT/ES</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">MELSEC iQ-F Series PLC CPU Module</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 2 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/mitsubishi-servo.jpg" alt="Mitsubishi Servo">
+                    </div>
+                    <div class="product-info">
+                        <h3>MR-J4-40B</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">MELSERVO-J4 Series AC Servo Amplifier</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 3 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/mitsubishi-hmi.jpg" alt="Mitsubishi HMI">
+                    </div>
+                    <div class="product-info">
+                        <h3>GT2712-STBA</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">GOT2000 Series HMI Touch Screen</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 4 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/mitsubishi-inverter.jpg" alt="Mitsubishi Inverter">
+                    </div>
+                    <div class="product-info">
+                        <h3>FR-F840-00083-2-60</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">FREQROL-F800 Series Inverter</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="mitsibushielectric.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("../components/header.html");
+            $("#footer-placeholder").load("../components/footer.html");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1063 @@
+/* İletişim Sayfası Temel Stil Tanımlamaları */
+:root {
+    --primary-color: #2ABCFF;
+    --secondary-color: #333333;
+    --accent-color: #FF9800;
+    --light-color: #FFFFFF;
+    --dark-color: #222222;
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+    --border-color: #E5E5E5;
+    --light-gray: #F5F5F5;
+    --medium-gray: #999999;
+    --dark-gray: #666666;
+    --shadow-small: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-large: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --border-radius-small: 5px;
+    --border-radius-medium: 10px;
+    --border-radius-large: 20px;
+    --border-radius-round: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    background-color: #FCFCFC;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.page-content#iletisim {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero Bölümü */
+.contact-hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.contact-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 10s var(--transition-slow);
+}
+
+.contact-hero:hover .contact-hero-image {
+    transform: scale(1.05);
+}
+
+.contact-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--light-color);
+    width: 90%;
+    max-width: 800px;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.contact-hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-divider {
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0 auto 30px;
+}
+
+.contact-hero-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-weight: 300;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* İçerik Bölümü */
+.contact-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1400px;
+    margin: -70px auto 50px;
+    position: relative;
+    z-index: 3;
+    padding: 0 20px;
+}
+
+/* İletişim Bilgileri Bölümü */
+.contact-info-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.contact-info-box {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-large);
+    padding: 40px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/pattern-bg.png');
+    background-size: cover;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.contact-info-header {
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info-header h2 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.info-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-info-content {
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.info-icon {
+    flex: 0 0 50px;
+    height: 50px;
+    background-color: rgba(42, 188, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--primary-color);
+    font-size: 20px;
+    transition: all var(--transition-medium);
+}
+
+.info-item:hover .info-icon {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: translateY(-3px);
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-text h3 {
+    color: var(--light-color);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.info-text p {
+    color: #bbb;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 5px;
+}
+
+.info-text a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.info-text a:hover {
+    color: var(--primary-color);
+}
+
+.social-media-links {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    font-size: 16px;
+    text-decoration: none;
+    transition: all var(--transition-medium);
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: translateY(-3px);
+}
+
+/* İletişim Formu Bölümü */
+.contact-form-container {
+    flex: 1.5;
+    min-width: 300px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.contact-form-box {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-large);
+    padding: 40px;
+    height: 100%;
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: var(--secondary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.form-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.form-header p {
+    color: var(--dark-gray);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.highlight {
+    color: var(--error-color);
+}
+
+.required {
+    color: var(--error-color);
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 250px;
+    padding: 0 10px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    color: var(--secondary-color);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    font-size: 15px;
+    color: var(--dark-gray);
+    background-color: var(--light-color);
+    transition: all var(--transition-fast);
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23999999" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(42, 188, 255, 0.2);
+}
+
+.input-icon {
+    position: absolute;
+    left: 25px;
+    top: 39px;
+    color: var(--medium-gray);
+    font-size: 16px;
+    transition: color var(--transition-fast);
+}
+
+.form-group input:focus + .input-icon,
+.form-group select:focus + .input-icon,
+.form-group textarea:focus + .input-icon {
+    color: var(--primary-color);
+}
+
+.textarea-icon {
+    top: 44px;
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    background-color: var(--light-color);
+    transition: all var(--transition-fast);
+}
+
+.phone-input span {
+    padding: 12px 15px;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    border-right: 1px solid var(--border-color);
+    font-size: 15px;
+}
+
+.phone-input input {
+    flex: 1;
+    padding: 12px 15px 12px 15px !important;
+    border: none !important;
+    font-size: 15px;
+    color: var(--dark-gray);
+    background-color: var(--light-color);
+}
+
+.phone-input:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(42, 188, 255, 0.2);
+}
+
+.phone-icon {
+    left: 78px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    transition: all var(--transition-fast);
+}
+
+.checkbox-container:hover .checkmark {
+    background-color: #e0e0e0;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.terms-text {
+    color: var(--dark-gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.terms-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.terms-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 25px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: var(--border-radius-round);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.submit-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 1s;
+    z-index: -1;
+}
+
+.submit-btn:hover:before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #1da7e8;
+    box-shadow: 0 5px 15px rgba(42, 188, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(42, 188, 255, 0.4);
+}
+
+.btn-text {
+    margin-right: 10px;
+}
+
+.btn-icon {
+    display: inline-flex;
+    font-size: 16px;
+    transition: transform var(--transition-medium);
+}
+
+.submit-btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+/* Harita Bölümü */
+.map-section {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.map-section h2 {
+    color: var(--secondary-color);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.map-divider {
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 0 auto 30px;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-large);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    border: none;
+    height: 450px;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.map-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-medium);
+    padding: 25px;
+    text-align: left;
+    max-width: 350px;
+}
+
+.map-card h3 {
+    color: var(--secondary-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.map-card p {
+    color: var(--dark-gray);
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.map-card p i {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: var(--border-radius-small);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all var(--transition-medium);
+}
+
+.directions-btn span {
+    margin-right: 8px;
+}
+
+.directions-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Modal Stilleri */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+    overflow-y: auto;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--light-color);
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: var(--border-radius-medium);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: var(--shadow-large);
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: all var(--transition-medium);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--medium-gray);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.close-modal:hover {
+    color: var(--secondary-color);
+}
+
+.modal h2 {
+    color: var(--secondary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-body {
+    margin-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: var(--medium-gray);
+    border-radius: 10px;
+}
+
+.modal-body h3 {
+    color: var(--secondary-color);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 0 10px;
+}
+
+.modal-body p {
+    color: var(--dark-gray);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.accept-btn, .cancel-btn, .modal-ok-btn {
+    padding: 10px 20px;
+    border-radius: var(--border-radius-small);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+    border: none;
+}
+
+.accept-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.accept-btn:hover {
+    background-color: #1da7e8;
+}
+
+.cancel-btn {
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+}
+
+.cancel-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.success-content {
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.success-icon {
+    font-size: 70px;
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.success-content h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.success-content p {
+    color: var(--dark-gray);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.modal-ok-btn {
+    background-color: var(--success-color);
+    color: var(--light-color);
+    padding: 12px 30px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.modal-ok-btn:hover {
+    background-color: #43a047;
+}
+
+/* Form Doğrulama Stilleri */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea,
+.form-group.error .phone-input {
+    border-color: var(--error-color);
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea,
+.form-group.success .phone-input {
+    border-color: var(--success-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 500;
+    display: none;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.form-group.error .input-icon {
+    color: var(--error-color);
+}
+
+.form-group.success .input-icon {
+    color: var(--success-color);
+}
+
+/* Animasyonlar */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1100px) {
+    .contact-content-wrapper {
+        margin-top: -50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-hero-content h1 {
+        font-size: 42px;
+    }
+    
+    .map-overlay {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: -70px;
+        z-index: 10;
+    }
+    
+    .map-card {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+    
+    .contact-content-wrapper {
+        margin-top: -40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        height: 400px;
+    }
+    
+    .contact-hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .contact-hero-content p {
+        font-size: 16px;
+    }
+    
+    .contact-content-wrapper {
+        margin-top: -30px;
+        flex-direction: column;
+    }
+    
+    .contact-info-container, .contact-form-container {
+        padding: 0;
+    }
+    
+    .contact-info-box, .contact-form-box {
+        padding: 30px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .map-section h2 {
+        font-size: 28px;
+    }
+    
+    .modal-content {
+        padding: 20px;
+        margin: 70px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-hero {
+        height: 350px;
+    }
+    
+    .contact-hero-content h1 {
+        font-size: 30px;
+    }
+    
+    .contact-hero-content p {
+        font-size: 14px;
+    }
+    
+    .social-media-links {
+        justify-content: center;
+    }
+    
+    .info-icon {
+        flex: 0 0 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .info-text h3 {
+        font-size: 16px;
+    }
+    
+    .info-text p {
+        font-size: 14px;
+    }
+    
+    .map-section h2 {
+        font-size: 24px;
+    }
+    
+    .contact-form-box, .contact-info-box {
+        padding: 20px;
+    }
+    
+    .submit-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Print Medya Sorguları */
+@media print {
+    .contact-hero-overlay {
+        background: rgba(0, 0, 0, 0.3);
+    }
+    
+    .contact-content-wrapper {
+        display: block;
+        margin-top: 20px;
+    }
+    
+    .contact-info-box, .contact-form-box {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .submit-btn, .social-link, .directions-btn {
+        background-color: #ddd !important;
+        color: #333 !important;
+        box-shadow: none !important;
+    }
+    
+    .map-container {
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+}
+
+/* Özelleştirilmiş Animasyonlar */
+.animate__fadeInLeft {
+    animation-duration: 0.8s;
+    animation-delay: 0.2s;
+}
+
+.animate__fadeInRight {
+    animation-duration: 0.8s;
+    animation-delay: 0.4s;
+}
+
+.animate__fadeIn {
+    animation-duration: 1s;
+}

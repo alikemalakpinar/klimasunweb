@@ -1,0 +1,859 @@
+/* Geliştirilmiş Header CSS - Düzeltilmiş */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #2ABCFF;
+    --primary-dark: #0095db;
+    --primary-light: #62d0ff;
+    --primary-transparent: rgba(42, 188, 255, 0.1);
+    --accent-color: #FF9800;
+    --dark-color: #333;
+    --text-color: #444;
+    --light-color: #f8f8f8;
+    --white-color: #ffffff;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.12);
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header Stilleri - Geliştirilmiş */
+.header {
+    background: var(--white-color);
+    padding: 15px 0;
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Header gizleme sınıfı - Scroll işlemleri için */
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Logo Stilleri - Geliştirilmiş */
+.logo {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.logo a {
+    display: block;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+/* Navigasyon Menüsü - Geliştirilmiş */
+.nav-menu {
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--primary-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 5px 0;
+    transition: color var(--transition-normal), transform var(--transition-normal);
+}
+
+.nav-menu a:hover {
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    left: 0;
+    bottom: 0;
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0.8;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.nav-menu a.active {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+    background: var(--primary-dark);
+    height: 3px;
+    opacity: 1;
+}
+
+/* Menü Animasyonları */
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    right: -5px;
+    height: 0;
+    background-color: var(--primary-transparent);
+    border-radius: 4px;
+    transition: height var(--transition-fast);
+    z-index: -1;
+}
+
+.nav-menu a:hover::before {
+    height: calc(100% + 4px);
+}
+
+/* Header Sağ Kısım - Geliştirilmiş */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Arama Kutusu Stilleri - Geliştirilmiş */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    padding: 8px 12px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-box:hover {
+    color: var(--primary-dark);
+    background-color: var(--primary-transparent);
+    transform: scale(1.05);
+}
+
+.search-box span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.search-box i {
+    font-size: 16px;
+    transition: transform var(--transition-normal);
+}
+
+.search-box:hover i {
+    transform: scale(1.1) rotate(15deg);
+}
+
+/* Açılır Arama Penceresi */
+.search-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 15vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.search-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-form {
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.search-container.show .search-form {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    background-color: var(--white-color);
+    color: var(--dark-color);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--primary-color), var(--shadow-lg);
+}
+
+.search-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+}
+
+.search-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.search-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--white-color);
+    font-size: 28px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all var(--transition-normal);
+}
+
+.search-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.search-message {
+    text-align: center;
+    color: var(--white-color);
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Talep Butonu Stilleri - Geliştirilmiş */
+.talep-button {
+    background: linear-gradient(45deg, #2ABCFF, #00A0E4);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(42, 188, 255, 0.3);
+    letter-spacing: 0.5px;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.talep-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #00A0E4, #0095db);
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+
+.talep-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 7px 20px rgba(42, 188, 255, 0.4);
+}
+
+.talep-button:hover:before {
+    left: 0;
+}
+
+.talep-button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 8px rgba(42, 188, 255, 0.3);
+}
+
+.button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: transform var(--transition-normal);
+}
+
+.talep-button:hover .button-icon {
+    transform: rotate(15deg) scale(1.2);
+}
+
+.animate-pulse {
+    animation: button-pulse 1.5s infinite;
+}
+
+@keyframes button-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(42, 188, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(42, 188, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(42, 188, 255, 0);
+    }
+}
+
+/* Mobil menü butonu - Geliştirilmiş */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    transition: all var(--transition-normal);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    z-index: 10;
+}
+
+.mobile-menu-button:hover {
+    color: var(--primary-dark);
+    background-color: var(--primary-transparent);
+}
+
+.mobile-menu-button.active {
+    background-color: var(--primary-transparent);
+    color: var(--primary-dark);
+    transform: rotate(90deg);
+}
+
+/* Mega Menü Stilleri - Düzeltilmiş */
+.has-mega-menu {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    width: 600px;
+    max-width: 90vw;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Elem kapalıyken tıklanamaz */
+    transition: opacity var(--transition-normal), visibility var(--transition-normal), transform var(--transition-normal);
+    z-index: 999;
+}
+
+.mega-menu.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all; /* Görünür olduğunda tıklanabilir */
+}
+
+.mega-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 16px;
+    height: 16px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+}
+
+.mega-menu-column h3 {
+    color: var(--primary-dark);
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--primary-transparent);
+}
+
+.mega-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mega-menu-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-normal);
+}
+
+.mega-menu-links a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.mega-menu-links a i {
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+/* Scroll Efekti */
+.header.scrolled {
+    padding: 10px 0;
+    box-shadow: var(--shadow-lg);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.header.scrolled .logo img {
+    height: 40px;
+}
+
+/* Responsive tasarım - İyileştirilmiş */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    
+    .logo img {
+        height: 45px;
+    }
+
+    .nav-menu {
+        margin-right: 15px;
+    }
+
+    .nav-menu ul {
+        gap: 25px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .search-box span {
+        font-size: 13px;
+    }
+
+    .talep-button {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .mega-menu {
+        width: 500px;
+    }
+}
+
+@media (max-width: 880px) {
+    .nav-menu ul {
+        gap: 15px;
+    }
+    
+    .nav-menu a {
+        font-size: 12px;
+    }
+    
+    .mega-menu {
+        width: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .mobile-menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 1;
+        margin-left: 10px;
+    }
+
+    .nav-menu {
+        margin: 0;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 80px 0 0;
+        z-index: 5;
+        overflow-y: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    }
+
+    .nav-menu.active {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        max-width: 300px;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .nav-menu a {
+        font-size: 18px;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-menu li:last-child a {
+        border-bottom: none;
+    }
+
+    .nav-menu a:hover {
+        background: var(--primary-transparent);
+    }
+
+    .header-right {
+        order: 0;
+        margin-left: auto;
+        margin-right: 10px;
+        gap: 15px;
+    }
+
+    .search-box span {
+        display: none;
+    }
+
+    .search-box {
+        padding: 8px;
+    }
+
+    .search-box i {
+        font-size: 18px;
+    }
+
+    .talep-button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    /* Mega Menü - Mobile - Düzeltilmiş */
+    .mega-menu {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        transform: none !important; /* Prevent any transforms on mobile */
+        background: transparent;
+        box-shadow: none;
+        grid-template-columns: 1fr;
+        padding: 0 20px 20px;
+        margin-top: 0;
+        border-radius: 0;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        transition: opacity var(--transition-normal), visibility var(--transition-normal), height var(--transition-normal);
+    }
+    
+    .mega-menu.show {
+        display: grid; /* Start with display:grid */
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        overflow: visible;
+    }
+    
+    .mega-menu::before {
+        display: none;
+    }
+    
+    .mega-menu-column {
+        margin-bottom: 15px;
+    }
+    
+    .mega-menu-column h3 {
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    .mega-menu-links a {
+        text-align: center;
+        justify-content: center;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 12px 0;
+    }
+    
+    .logo img {
+        height: 38px;
+    }
+
+    .header-container {
+        padding: 0 12px;
+    }
+
+    .talep-button {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+    
+    .mobile-menu-button {
+        font-size: 20px;
+        width: 38px;
+        height: 38px;
+    }
+    
+    .search-box {
+        padding: 6px;
+    }
+    
+    .search-box i {
+        font-size: 16px;
+    }
+    
+    .nav-menu a {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .search-form {
+        width: 90%;
+    }
+    
+    .search-input {
+        padding: 12px 45px 12px 15px;
+        font-size: 16px;
+    }
+    
+    .search-button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Erişilebilirlik İyileştirmeleri */
+.header a:focus,
+.mobile-menu-button:focus,
+.search-box:focus,
+.talep-button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header *,
+    .talep-button,
+    .search-box,
+    .nav-menu a,
+    .logo img,
+    .mobile-menu-button,
+    .mega-menu,
+    .search-container {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Koyu Mod Desteği */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --primary-transparent: rgba(42, 188, 255, 0.15);
+        --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+        --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header {
+        background: #1a1a1a;
+    }
+    
+    .header.scrolled {
+        background: rgba(26, 26, 26, 0.95);
+    }
+    
+    .nav-menu a {
+        color: var(--primary-color);
+    }
+    
+    .nav-menu a:hover::before {
+        background-color: rgba(42, 188, 255, 0.2);
+    }
+    
+    .search-input {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+        border: 1px solid #444;
+    }
+    
+    .mega-menu {
+        background-color: #2a2a2a;
+    }
+    
+    .mega-menu::before {
+        background-color: #2a2a2a;
+    }
+    
+    .mega-menu-links a {
+        color: #e0e0e0;
+    }
+    
+    .mega-menu-column h3 {
+        border-bottom-color: #444;
+    }
+    
+    @media (max-width: 768px) {
+        .nav-menu {
+            background: rgba(26, 26, 26, 0.98);
+        }
+        
+        .nav-menu a {
+            border-bottom-color: #444;
+        }
+    }
+}

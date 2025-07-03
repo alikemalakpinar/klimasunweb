@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Klimasun - Isıtma, Soğutma ve İklimlendirme Sistemleri">
+    <title>Klimasun | Anasayfa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/rfq-modal.css">
+    <link rel="stylesheet" href="../css/enhanced-button.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="anasayfa.html" aria-label="Anasayfa'ya git">
+                    <img src="../klimasunlogo.png" alt="Klimasun Logo">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="anasayfa.html" class="nav-link">ANASAYFA</a></li>
+                    <li><a href="hakkimizda.html" class="nav-link">HAKKIMIZDA</a></li>
+                    <li class="has-mega-menu">
+                        <a href="ureticiler.html" class="nav-link">ÜRETİCİLER <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-column">
+                                <h3>Otomasyon Sistemleri</h3>
+                                <div class="mega-menu-links">
+                                    <a href="pages/allenbradley.html"><i class="fas fa-angle-right"></i> Allen Bradley</a>
+                                    <a href="pages/siemens.html"><i class="fas fa-angle-right"></i> Siemens</a>
+                                    <a href="pages/schneiderelectrics.html"><i class="fas fa-angle-right"></i> Schneider Electric</a>
+                                    <a href="pages/mitsubishi.html"><i class="fas fa-angle-right"></i> Mitsubishi Electric</a>
+                                </div>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Motor Sürücüleri</h3>
+                                <div class="mega-menu-links">
+                                    <a href="pages/lenze.html"><i class="fas fa-angle-right"></i> Lenze</a>
+                                    <a href="pages/indramat.html"><i class="fas fa-angle-right"></i> Indramat</a>
+                                    <a href="pages/abb.html"><i class="fas fa-angle-right"></i> ABB</a>
+                                    <a href="pages/yaskawa.html"><i class="fas fa-angle-right"></i> Yaskawa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="blog.html" class="nav-link">BLOG</a></li>
+                    <li><a href="iletisim.html" class="nav-link">İLETİŞİM</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Menüyü aç/kapat">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="header-right">
+                <div class="search-box" role="button" tabindex="0" aria-label="Arama yap">
+                    <span>ARAMA YAP</span>
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="talep-button" id="rfqButton">
+                    <span class="button-text">HIZLI TALEP</span>
+                    <span class="button-icon"><i class="fas fa-bolt"></i></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- RFQ Modal -->
+    <div class="rfq-modal-overlay" id="rfqModal" aria-hidden="true">
+        <div class="rfq-modal" role="dialog" aria-labelledby="rfqModalTitle">
+            <button class="rfq-modal-close" id="rfqCloseButton" aria-label="Kapat">&times;</button>
+            <h2 id="rfqModalTitle">Hızlı Talep Oluştur</h2>
+            <div class="rfq-content">
+                <div class="rfq-left">
+                    <div class="product-table">
+                        <div class="product-input-row">
+                            <input type="text" class="product-input" placeholder="Ürün(ler)" aria-label="Ürün adı">
+                            <input type="number" class="qty-input" value="1" min="1" aria-label="Miktar">
+                            <div class="condition-icons">
+                                <button class="condition-icon" title="Yeni paketlenmiş" aria-label="Yeni paketlenmiş"><i class="fas fa-box"></i></button>
+                                <button class="condition-icon" title="Açık kutu" aria-label="Açık kutu"><i class="fas fa-box-open"></i></button>
+                                <button class="condition-icon" title="Yenilenmiş" aria-label="Yenilenmiş"><i class="fas fa-sync"></i></button>
+                                <button class="condition-icon" title="Kullanılmış" aria-label="Kullanılmış"><i class="fas fa-cog"></i></button>
+                                <button class="condition-icon remove-row" title="Satırı sil" aria-label="Satırı sil"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-more-btn" id="addMoreProducts">
+                        <i class="fas fa-plus"></i> Ürün Ekle
+                    </button>
+
+                    <div class="file-upload-area" id="dropArea">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <p>Ürün listesi veya ek dosyaları sürükle & bırak</p>
+                        <p class="file-types">(.jpg, .jpeg, .JPG, .png, .pdf, .doc, .docx, .csv, .xls, .xlsx)</p>
+                        <p>veya</p>
+                        <button type="button" id="browseFiles" class="browse-files-btn">
+                            <i class="fas fa-folder-open"></i> Dosya Seç
+                        </button>
+                        <p class="file-size-info">maksimum: 20MB</p>
+                        <p class="file-count">0 / 5</p>
+                        <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,.JPG,.png,.pdf,.doc,.docx,.csv,.xls,.xlsx" style="display: none;">
+                        
+                        <div class="uploaded-files" id="uploadedFiles"></div>
+                    </div>
+
+                    <textarea class="notes-textarea" id="notesTextarea" placeholder="Notlar:"></textarea>
+                </div>
+                <div class="rfq-right">
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Hızlı Talep</h3>
+                                <p>Hızlı talep oluşturmak için bilgilerinizi girin</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Hesap Yönetimi</h3>
+                                <p>Hesap yöneticiniz hızlı yanıtlar ve çözümler sunar</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Teslimat</h3>
+                                <p>Ürününüzün kapınıza kadar ulaşması için gerekli tüm adımları yönetiyoruz</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="rfqForm">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="nameInput" placeholder="Adınız *" required>
+                            </div>
+                            <div class="error-message">Lütfen adınızı girin</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-building input-icon"></i>
+                                <input type="text" id="companyInput" placeholder="Şirket adı *" required>
+                            </div>
+                            <div class="error-message">Lütfen şirket adını girin</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="phone-input">
+                                <div class="country-code">
+                                    <img src="../images/tr-flag.png" alt="TR">
+                                    <span>+90</span>
+                                </div>
+                                <input type="tel" id="phoneInput" placeholder="Telefon Numarası">
+                            </div>
+                            <div class="error-message">Lütfen geçerli bir telefon numarası girin</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="emailInput" placeholder="E-posta *" required>
+                            </div>
+                            <div class="error-message">Lütfen geçerli bir e-posta adresi girin</div>
+                        </div>
+                        <div class="terms-checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms"><a href="#" target="_blank">Şartlar ve koşulları</a> kabul ediyorum</label>
+                            <div class="error-message">Devam etmek için şartları kabul etmelisiniz</div>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitButton">
+                            <span>GÖNDER</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <!-- Sayfa içeriği buraya gelecek -->
+    </main>
+
+    <script src="header.js"></script>
+    <script src="../js/enhanced-rfq-button.js"></script>
+</body>
+</html>

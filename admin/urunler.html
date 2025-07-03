@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Ürünler Yönetimi</title>
+    <link rel="stylesheet" href="components/header.css">
+    <link rel="stylesheet" href="urunler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="container">
+        <h1>Ürün Yönetimi</h1>
+        
+        <button class="toggle-form-btn">
+            <i class="fas fa-plus"></i>
+            Yeni Ürün Ekle
+        </button>
+        
+        <form id="productForm" class="product-form">
+            <div class="form-group">
+                <label for="productName">Ürün Adı</label>
+                <input type="text" id="productName" name="productName" required placeholder="Ürün adını giriniz">
+            </div>
+            
+            <div class="form-group">
+                <label for="productCategory">Kategori</label>
+                <select id="productCategory" name="productCategory" required>
+                    <option value="">Kategori Seçin</option>
+                    <option value="ALLEN BRADLEY">ALLEN BRADLEY</option>
+                    <option value="SIEMENS">SIEMENS</option>
+                    <option value="LENZE">LENZE</option>
+                    <option value="SCHNEIDER ELECTRIC">SCHNEIDER ELECTRIC</option>
+                    <option value="MITSUBISHI ELECTRIC">MITSUBISHI ELECTRIC</option>
+                    <option value="INDRAMAT">INDRAMAT</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="productStock">Stok Miktarı</label>
+                <input type="number" id="productStock" name="productStock" min="0" required placeholder="Stok miktarını giriniz">
+            </div>
+            
+            <div class="form-group">
+                <label for="productImage">Ürün Görseli</label>
+                <div class="file-input-wrapper">
+                    <div class="file-input-button">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Görsel yüklemek için tıklayın veya sürükleyin</p>
+                    </div>
+                    <input type="file" id="productImage" name="productImage" accept="image/*" required>
+                </div>
+                <img id="imagePreview" style="display: none; max-width: 200px; margin-top: 10px;">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus-circle"></i>
+                Ürün Ekle
+            </button>
+        </form>
+
+        <!-- Enhanced Filter Section -->
+        <div class="filter-section">
+            <div class="search-sort-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Ürün ara...">
+                </div>
+                <div class="sort-box">
+                    <select id="sortSelect">
+                        <option value="none">Sıralama Seçin</option>
+                        <option value="stockAsc">Stok: Azdan Çoğa</option>
+                        <option value="stockDesc">Stok: Çoktan Aza</option>
+                        <option value="nameAsc">İsim: A-Z</option>
+                        <option value="nameDesc">İsim: Z-A</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2>Kategoriye Göre Filtrele</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-border-all"></i>
+                    Tümü
+                </button>
+                <button class="filter-btn" data-category="ALLEN BRADLEY">
+                    <i class="fas fa-filter"></i>
+                    ALLEN BRADLEY
+                </button>
+                <button class="filter-btn" data-category="SIEMENS">
+                    <i class="fas fa-filter"></i>
+                    SIEMENS
+                </button>
+                <button class="filter-btn" data-category="LENZE">
+                    <i class="fas fa-filter"></i>
+                    LENZE
+                </button>
+                <button class="filter-btn" data-category="SCHNEIDER ELECTRIC">
+                    <i class="fas fa-filter"></i>
+                    SCHNEIDER ELECTRIC
+                </button>
+                <button class="filter-btn" data-category="MITSUBISHI ELECTRIC">
+                    <i class="fas fa-filter"></i>
+                    MITSUBISHI ELECTRIC
+                </button>
+                <button class="filter-btn" data-category="INDRAMAT">
+                    <i class="fas fa-filter"></i>
+                    INDRAMAT
+                </button>
+            </div>
+        </div>
+        
+        <!-- Active Filters Display -->
+        <div class="active-filters">
+            <div class="filter-tags"></div>
+            <button id="clearFilters" class="clear-filters-btn" style="display: none;">
+                <i class="fas fa-times"></i>
+                Filtreleri Temizle
+            </button>
+        </div>
+
+        <div id="productsList" class="products-list">
+            <!-- Products will be loaded here dynamically -->
+        </div>
+    </div>
+
+    <!-- Stok Düzenleme Modal -->
+    <div id="stockModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Stok Düzenle</h2>
+            <div class="form-group">
+                <label for="editStock">Yeni Stok Miktarı</label>
+                <input type="number" id="editStock" min="0" required>
+            </div>
+            <button class="btn btn-primary" onclick="updateStock()">Güncelle</button>
+        </div>
+    </div>
+
+    <!-- Ürün Düzenleme Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Ürün Düzenle</h2>
+            <div class="form-group">
+                <label for="editName">Ürün Adı</label>
+                <input type="text" id="editName" required>
+            </div>
+            <div class="form-group">
+                <label for="editCategory">Kategori</label>
+                <select id="editCategory" required>
+                    <option value="ALLEN BRADLEY">ALLEN BRADLEY</option>
+                    <option value="SIEMENS">SIEMENS</option>
+                    <option value="LENZE">LENZE</option>
+                    <option value="SCHNEIDER ELECTRIC">SCHNEIDER ELECTRIC</option>
+                    <option value="MITSUBISHI ELECTRIC">MITSUBISHI ELECTRIC</option>
+                    <option value="INDRAMAT">INDRAMAT</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" onclick="updateProduct()">Güncelle</button>
+        </div>
+    </div>
+
+    <script src="components/header.js"></script>
+    <script src="urunler.js"></script>
+</body>
+</html> 

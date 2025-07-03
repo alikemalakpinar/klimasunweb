@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Sıkça Sorulan Sorular</title>
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- FAQ Hero Section -->
+    <div class="faq-hero">
+        <div class="hero-particles"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1>Sıkça Sorulan Sorular</h1>
+            <div class="hero-divider"></div>
+            <p>Başlamadan önce bazı sorularınız mı var?<br>Aşağıdaki SSS bölümümüzü kontrol edin</p>
+            <div class="search-box">
+                <input type="text" id="faq-search" placeholder="Sorunuzu yazın...">
+                <button type="button" class="clear-search" id="clear-search" aria-label="Yazılan arama metnini temizle" style="display:none;">&times;</button>
+                <button type="button" id="search-btn" aria-label="Ara">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="wave-container">
+            <div class="wave"></div>
+            <div class="wave wave2"></div>
+        </div>
+    </div>
+
+    <!-- FAQ Content Section -->
+    <div class="faq-content">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Bilgi Merkezi</h2>
+                <p class="faq-subtitle">En çok sorulan sorulara hızlı cevaplar</p>
+            </div>
+            
+            <div class="faq-tabs">
+                <div class="category-icons">
+                    <div class="category-item active" data-category="all" tabindex="0" role="button" aria-pressed="true">
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <span>Tümü</span>
+                    </div>
+                    <div class="category-item" data-category="payment" tabindex="0" role="button" aria-pressed="false">
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <span>Ödeme</span>
+                    </div>
+                    <div class="category-item" data-category="shipping" tabindex="0" role="button" aria-pressed="false">
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <span>Kargo</span>
+                    </div>
+                    <div class="category-item" data-category="returns" tabindex="0" role="button" aria-pressed="false">
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <span>İadeler</span>
+                    </div>
+                    <div class="category-item" data-category="warranty" tabindex="0" role="button" aria-pressed="false">
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <span>Garanti</span>
+                    </div>
+                    <div class="category-item" data-category="technical" tabindex="0" role="button" aria-pressed="false">
+                        <div class="category-icon-wrap">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <span>Teknik</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-counter">
+                <span id="faq-count">Toplam 10 soru</span>
+                <div class="view-options">
+                    <button id="expand-all" class="view-btn"><i class="fas fa-plus-circle"></i> Tümünü Genişlet</button>
+                    <button id="collapse-all" class="view-btn"><i class="fas fa-minus-circle"></i> Tümünü Daralt</button>
+                </div>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item" data-category="warranty">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>İkinci el/takas ürünler herhangi bir garanti ile birlikte geliyor mu?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-1">
+                        <p>Tarafımızca tedarik edilen tüm ürünlerin çalışır durumda olduğu garanti edilir ve en az 12 aylık iade garantimiz kapsamındadır.</p>
+                        <p>Tüm garantiler parça üreticisi tarafından değil, Klimasun tarafından sağlanacaktır. Ürün, teslimat tarihinden itibaren sağlanan garanti süresi içinde arızalanırsa, lütfen ücretsiz onarım veya değişim için iade edin.</p>
+                        <p>Sorumluluğumuz, kendi seçimimize bağlı olarak, kusurlu ürünün müşterimize ücretsiz olarak onarılması veya değiştirilmesi ile sınırlı olacaktır. Ürünün onarılamayacağına veya değiştirilemeyeceğine karar verirsek, bize ödediğiniz tutara eşit bir miktarı iade edeceğiz.</p>
+                        <p>Bize ödenen tutarı aşmayan gerçek zararlar dışında herhangi bir zarardan sorumlu olmayacağız. Bu, sonuç olarak veya dolaylı zararlar veya kâr kaybı için herhangi bir sorumluluğu içerir.</p>
+                        <div class="answer-cta">
+                            <a href="../pages/warranty.html" class="cta-link">Garanti Politikamızı Görüntüle <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="warranty">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Ürünleriniz için garanti süresi nedir?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-2">
+                        <p>Standart garanti süremiz, teslimat tarihinden itibaren 12 aydır. Aksi belirtilmedikçe, bu tüm ürünler için geçerlidir.</p>
+                        <p>Bazı özel durumlarda, belirli ürünler için uzatılmış garanti seçenekleri sunabiliriz. Daha fazla bilgi için lütfen satış ekibimizle iletişime geçin.</p>
+                        <div class="answer-cta">
+                            <a href="../pages/warranty.html" class="cta-link">Garanti Politikamızı Görüntüle <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="shipping">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Siparişimi nasıl takip edebilirim?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-3">
+                        <p>Siparişiniz gönderildikten sonra, e-posta yoluyla bir takip numarası alacaksınız. Bu numarayı web sitemizde veya kargo firmasının web sitesinde siparişinizi takip etmek için kullanabilirsiniz.</p>
+                        <p>Takip numaranızı alamadıysanız veya siparişinizin durumu hakkında sorularınız varsa, lütfen müşteri hizmetleri ekibimizle iletişime geçmekten çekinmeyin.</p>
+                        <div class="answer-infographic">
+                            <div class="info-step">
+                                <div class="info-icon shipping"><i class="fas fa-box"></i></div>
+                                <div class="info-text">Sipariş İşlemi</div>
+                            </div>
+                            <div class="info-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="info-step">
+                                <div class="info-icon shipping"><i class="fas fa-warehouse"></i></div>
+                                <div class="info-text">Depo Hazırlığı</div>
+                            </div>
+                            <div class="info-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="info-step">
+                                <div class="info-icon shipping"><i class="fas fa-truck"></i></div>
+                                <div class="info-text">Kargoya Verildi</div>
+                            </div>
+                            <div class="info-arrow"><i class="fas fa-chevron-right"></i></div>
+                            <div class="info-step">
+                                <div class="info-icon shipping"><i class="fas fa-home"></i></div>
+                                <div class="info-text">Teslim Edildi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="payment">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Hangi ödeme yöntemlerini kabul ediyorsunuz?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-4">
+                        <p>Kredi kartları (Visa, MasterCard, American Express), banka havaleleri ve PayPal dahil olmak üzere çeşitli ödeme yöntemlerini kabul ediyoruz.</p>
+                        <div class="payment-methods">
+                            <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                            <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                            <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                            <div class="payment-icon"><i class="fab fa-paypal"></i></div>
+                            <div class="payment-icon"><i class="fas fa-university"></i></div>
+                        </div>
+                        <p>Büyük miktarda siparişler için, belirli müşterilerimize fatura seçeneği de sunuyoruz. Kredi şartları hakkında daha fazla bilgi için lütfen satış ekibimizle iletişime geçin.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="shipping">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Kargo ne kadar sürer?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-5">
+                        <p>Kargo süreleri, konumunuza ve seçilen kargo yöntemine bağlı olarak değişir. Genellikle, yurt içi siparişler 2-5 iş günü sürerken, uluslararası siparişler 7-14 iş günü sürebilir.</p>
+                        <p>Acil siparişler için, ek ücret karşılığında ekspres kargo seçenekleri mevcuttur. Lütfen mevcut seçenekler hakkında satış ekibimizle görüşün.</p>
+                        <div class="shipping-table">
+                            <div class="table-row header">
+                                <div class="table-cell">Bölge</div>
+                                <div class="table-cell">Standart</div>
+                                <div class="table-cell">Ekspres</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Türkiye İçi</div>
+                                <div class="table-cell">2-3 İş Günü</div>
+                                <div class="table-cell">1 İş Günü</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Avrupa</div>
+                                <div class="table-cell">5-7 İş Günü</div>
+                                <div class="table-cell">2-3 İş Günü</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Orta Doğu</div>
+                                <div class="table-cell">7-10 İş Günü</div>
+                                <div class="table-cell">3-4 İş Günü</div>
+                            </div>
+                            <div class="table-row">
+                                <div class="table-cell">Diğer Ülkeler</div>
+                                <div class="table-cell">10-14 İş Günü</div>
+                                <div class="table-cell">5-7 İş Günü</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="returns">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Ürün iade politikanız nedir?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-6">
+                        <p>Ürünlerimizden memnun kalmamanız durumunda, teslimat tarihinden itibaren 30 gün içinde iade edebilirsiniz. İade edilen ürünler orijinal ambalajında ve kullanılmamış durumda olmalıdır.</p>
+                        <p>Arızalı ürünler için, garanti kapsamında ücretsiz onarım veya değiştirme hizmeti sunuyoruz. Lütfen ürünü iade etmeden önce müşteri hizmetleri ekibimizle iletişime geçin.</p>
+                        <div class="return-steps">
+                            <div class="return-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>İletişime Geçin</h4>
+                                    <p>Müşteri hizmetleriyle iade talebinizi paylaşın</p>
+                                </div>
+                            </div>
+                            <div class="return-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>İade Formu</h4>
+                                    <p>Size gönderilen iade formunu doldurun</p>
+                                </div>
+                            </div>
+                            <div class="return-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Paketleme</h4>
+                                    <p>Ürünü orijinal ambalajında hazırlayın</p>
+                                </div>
+                            </div>
+                            <div class="return-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Kargo</h4>
+                                    <p>Ürünü belirtilen adrese gönderin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="technical">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Teknik destek nasıl alabilirim?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-7">
+                        <p>Teknik destek ekibimiz size yardımcı olmak için hazırdır. Telefonla veya e-posta ile bize ulaşabilirsiniz:</p>
+                        <ul class="support-info">
+                            <li><i class="fas fa-phone"></i> <a href="tel:+908504320339">+90 850 432 0 339</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:teknik@klimasun.com.tr">teknik@klimasun.com.tr</a></li>
+                        </ul>
+                        <p>Teknik destek hattımız Pazartesi-Cuma günleri 08:30-18:00 saatleri arasında hizmet vermektedir. Acil durumlarda 7/24 destek almak için öncelikli destek planlarımız hakkında bilgi alabilirsiniz.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="technical">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-8">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Ürün dokümantasyonlarına nasıl erişebilirim?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-8">
+                        <p>Tüm ürünlerimizin kullanım kılavuzları ve teknik dokümantasyonları web sitemizin "Kaynaklar" bölümünde bulunmaktadır. Ayrıca, satın aldığınız ürünle birlikte fiziksel veya dijital kopyalar da sağlıyoruz.</p>
+                        <p>Belirli bir ürünün dokümantasyonunu bulamıyorsanız, lütfen teknik destek ekibimizle iletişime geçin.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Kullanım Kılavuzları</a>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Teknik Şemalar</a>
+                            <a href="#" class="download-btn"><i class="fas fa-download"></i> Yazılım Güncellemeleri</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="payment">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Ödeme sırasında sorun yaşıyorum, ne yapmalıyım?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-9">
+                        <p>Ödeme işlemi sırasında sorun yaşıyorsanız, şu adımları deneyebilirsiniz:</p>
+                        <ol class="troubleshooting-steps">
+                            <li>Kredi kartı bilgilerinizin doğru girildiğinden emin olun</li>
+                            <li>Farklı bir tarayıcı veya cihaz kullanmayı deneyin</li>
+                            <li>Bankanızla iletişime geçerek işlemin reddedilip reddedilmediğini kontrol edin</li>
+                            <li>Alternatif bir ödeme yöntemi kullanmayı deneyin</li>
+                        </ol>
+                        <p>Sorun devam ederse, lütfen müşteri hizmetleri ekibimizle iletişime geçin. Size yardımcı olmaktan memnuniyet duyarız.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="returns">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-10">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>İade işlemi ne kadar sürer?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-10">
+                        <p>İade işlemi genellikle aşağıdaki aşamaları takip eder:</p>
+                        <ol>
+                            <li>İade talebinizi aldıktan sonra size bir onay e-postası göndeririz (1-2 iş günü)</li>
+                            <li>İade edilen ürün bize ulaştıktan sonra ürünü inceleyip onaylarız (3-5 iş günü)</li>
+                            <li>İade onaylandıktan sonra geri ödeme işleminizi gerçekleştiririz (2-3 iş günü)</li>
+                        </ol>
+                        <p>Toplam süreç genellikle 6-10 iş günü sürer, ancak bu süre banka veya kredi kartı şirketinize bağlı olarak değişebilir.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="warranty">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-11">
+                        <div class="question-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>Garanti kapsamında olmayan onarımlar için ücretlendirme nasıl yapılır?</span>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-11">
+                        <p>Garanti kapsamında olmayan onarımlar için, öncelikle bir teşhis ücreti alınır ve ardından onarım için size bir fiyat teklifi sunulur. Teklifimizi kabul etmeniz durumunda, teşhis ücreti toplam onarım ücretinden düşülür.</p>
+                        <p>Teklifimizi kabul etmezseniz, yalnızca teşhis ücreti ödersiniz ve ürününüz size geri gönderilir.</p>
+                        <p>Onarım maliyetleri, gerekli parçalara ve işçilik süresine bağlı olarak değişir. Her durumda, onarım işlemine başlamadan önce size net bir fiyat teklifi sunulacaktır.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="no-results" style="display: none;">
+                <div class="no-results-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Üzgünüz, aramanızla eşleşen soru bulunamadı</h3>
+                <p>Farklı bir arama terimi deneyin veya sorunuzu bize doğrudan sorun.</p>
+                <a href="../pages/iletisim.html" class="contact-btn">Bizimle İletişime Geçin</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-container">
+            <div class="contact-text">
+                <h2>Cevabınızı Bulamadınız mı?</h2>
+                <p>Hala sorunuzun cevabını bulamadıysanız, lütfen bizimle iletişime geçmekten çekinmeyin. Uzman ekibimiz size yardımcı olmak için hazır.</p>
+            </div>
+            <div class="contact-buttons">
+                <a href="../pages/iletisim.html" class="contact-btn primary"><i class="fas fa-envelope"></i> Mesaj Gönderin</a>
+                <a href="tel:+908504320339" class="contact-btn secondary"><i class="fas fa-phone"></i> Bizi Arayın</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+          $("#header-placeholder").load("../components/header.html");
+          $("#footer-placeholder").load("../components/footer.html");
+        });
+      </script>
+    <script>
+       $(function(){
+    // Header ve Footer bileşenlerini yükle
+    $("#header-placeholder").load("../components/header.html");
+    $("#footer-placeholder").load("../components/footer.html");
+
+    // İlk yüklemede 'all' kategorisinin aktif olduğundan emin ol ve sayacı güncelle
+    $('.category-item[data-category="all"]').addClass('active').attr('aria-pressed', 'true');
+    updateFaqCount();
+
+    // FAQ akordiyon işlevselliği - erişilebilirlik arttırılmış
+    // Artık buna gerek yok çünkü button elementlerini manuel olarak oluşturduk HTML'de
+    /*
+    $('.faq-question').each(function(index) {
+        // Sorulan soruların erişilebilirliğini arttırmak için ARIA özellikleri ekle
+        const answerId = 'faq-answer-' + index;
+        $(this).next('.faq-answer').attr('id', answerId);
+        $(this).attr({
+            'aria-expanded': 'false',
+            'aria-controls': answerId,
+            'role': 'button',
+            'tabindex': '0'
+        });
+    });
+    */
+
+    // FAQ soruları için click ve keydown event listener
+    $('.faq-question').on('click keydown', function(e) {
+        // Erişilebilirlik için klavye erişimini de destekle
+        if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+        
+        // Tıklanan sorunun durumunu değiştir
+        const isExpanded = $(this).attr('aria-expanded') === 'true';
+        $(this).attr('aria-expanded', !isExpanded);
+        
+        // Görsel değişiklikler
+        $(this).toggleClass('active');
+        
+        if ($(this).hasClass('active')) {
+            $(this).find('.toggle-icon i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        } else {
+            $(this).find('.toggle-icon i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        }
+        
+        // Cevabı göster/gizle
+        $(this).next('.faq-answer').slideToggle();
+    });
+
+    // Kategori geçiş işlevselliği 
+    $('.category-item').on('click keydown', function(e) {
+        // Klavye erişimini de destekle
+        if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+
+        // Aktif kategorileri güncelle
+        $('.category-item').removeClass('active').attr('aria-pressed', 'false');
+        $(this).addClass('active').attr('aria-pressed', 'true');
+        
+        const category = $(this).data('category');
+        
+        // Arama kutusunu temizle
+        $('#faq-search').val('');
+        $('#search-filter-indicator').remove(); // Varsa arama göstergesini temizle
+        $('#clear-search').hide();
+        
+        if (category === 'all') {
+            $('.faq-item').show();
+        } else {
+            $('.faq-item').hide();
+            $(`.faq-item[data-category="${category}"]`).show();
+        }
+        
+        // Gösterilen soru sayısını güncelle
+        updateFaqCount();
+        checkNoResults();
+    });
+    
+    // Debounce fonksiyonu - arama performansını arttırır
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            const context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                func.apply(context, args);
+            }, wait);
+        };
+    }
+    
+    // Arama işlevselliği (debounce ile optimize edilmiş)
+    $('#faq-search').on('input', debounce(function() {
+        const searchTerm = $(this).val().toLowerCase().trim();
+        
+        if (searchTerm === '') {
+            // Arama filtre göstergesini kaldır (varsa)
+            $('#search-filter-indicator').remove();
+            
+            // Aktif kategoriye göre sıfırla
+            const activeCategory = $('.category-item.active').data('category');
+            
+            if (activeCategory === 'all') {
+                $('.faq-item').show();
+            } else {
+                $('.faq-item').hide();
+                $(`.faq-item[data-category="${activeCategory}"]`).show();
+            }
+        } else {
+            // Aktif kategoriyi al
+            const activeCategory = $('.category-item.active').data('category');
+            const activeCategoryName = $('.category-item.active span').text();
+            
+            // Filtreleme göstergesi ekle
+            $('#search-filter-indicator').remove();
+            if (activeCategory === 'all') {
+                $('.faq-counter').prepend('<span id="search-filter-indicator" class="search-indicator">"<strong>' + searchTerm + '</strong>" için sonuçlar</span>');
+            } else {
+                $('.faq-counter').prepend('<span id="search-filter-indicator" class="search-indicator">"<strong>' + searchTerm + '</strong>" için ' + activeCategoryName + ' kategorisinde sonuçlar</span>');
+            }
+            
+            // Arama terimine göre filtrele (aktif kategoride)
+            $('.faq-item').hide();
+            
+            // Filtreleme mantığı: Aktif kategori 'all' ise tüm öğelerde, değilse sadece aktif kategoride ara
+            const itemSelector = activeCategory === 'all' ? '.faq-item' : `.faq-item[data-category="${activeCategory}"]`;
+            
+            $(itemSelector).each(function() {
+                const questionText = $(this).find('.faq-question span').text().toLowerCase();
+                const answerText = $(this).find('.faq-answer').text().toLowerCase();
+                
+                if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                    $(this).show();
+                }
+            });
+        }
+        
+        // Gösterilen soru sayısını güncelle
+        updateFaqCount();
+        checkNoResults();
+    }, 300)); // 300ms debounce - kullanıcı yazmayı bıraktıktan 300ms sonra çalışır
+    
+    // Arama butonu işlevselliği
+    $('#search-btn').click(function() {
+        const searchTerm = $('#faq-search').val().trim();
+        
+        if (searchTerm !== '') {
+            // Tüm arama işlevselli öğeleri görünsün, ama aktif kategoriyi değiştirmesin
+            const activeCategory = $('.category-item.active').data('category');
+            const activeCategoryName = $('.category-item.active span').text();
+            
+            // Arama terimine göre filtrele (aktif kategoride)
+            $('.faq-item').hide();
+            
+            // Filtreleme mantığı: Aktif kategori 'all' ise tüm öğelerde, değilse sadece aktif kategoride ara
+            const itemSelector = activeCategory === 'all' ? '.faq-item' : `.faq-item[data-category="${activeCategory}"]`;
+            
+            $(itemSelector).each(function() {
+                const questionText = $(this).find('.faq-question span').text().toLowerCase();
+                const answerText = $(this).find('.faq-answer').text().toLowerCase();
+                
+                if (questionText.includes(searchTerm.toLowerCase()) || answerText.includes(searchTerm.toLowerCase())) {
+                    $(this).show();
+                }
+            });
+            
+            // Arama göstergesini ekle
+            $('#search-filter-indicator').remove();
+            if (activeCategory === 'all') {
+                $('.faq-counter').prepend('<span id="search-filter-indicator" class="search-indicator">"<strong>' + searchTerm + '</strong>" için sonuçlar</span>');
+            } else {
+                $('.faq-counter').prepend('<span id="search-filter-indicator" class="search-indicator">"<strong>' + searchTerm + '</strong>" için ' + activeCategoryName + ' kategorisinde sonuçlar</span>');
+            }
+            
+            // Gösterilen soru sayısını güncelle
+            updateFaqCount();
+            checkNoResults();
+            
+            // Sonuçlara kaydır
+            $('html, body').animate({
+                scrollTop: $('.faq-content').offset().top - 100
+            }, 800);
+        }
+    });
+
+    // Enter tuşuyla arama
+    $('#faq-search').keypress(function(e) {
+        if (e.which === 13) {
+            $('#search-btn').click();
+            return false; // Form gönderimini engelle
+        }
+    });
+
+    // Arama kutusunu temizleme butonu
+    $('#clear-search').click(function() {
+        $('#faq-search').val('').trigger('input');
+        $(this).hide();
+        $('#search-filter-indicator').remove();
+    });
+
+    // Arama kutusu içeriği değiştiğinde temizleme butonunu göster/gizle
+    $('#faq-search').on('input', function() {
+        const hasValue = $(this).val().trim() !== '';
+        $('#clear-search').toggle(hasValue);
+    });
+
+    // Tümünü genişlet
+    $('#expand-all').click(function() {
+        $('.faq-answer').slideDown();
+        $('.faq-question').each(function() {
+            $(this).addClass('active').attr('aria-expanded', 'true');
+            $(this).find('.toggle-icon i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        });
+    });
+
+    // Tümünü daralt
+    $('#collapse-all').click(function() {
+        $('.faq-answer').slideUp();
+        $('.faq-question').each(function() {
+            $(this).removeClass('active').attr('aria-expanded', 'false');
+            $(this).find('.toggle-icon i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        });
+    });
+
+    // Görünen soru sayısını güncelle
+    function updateFaqCount() {
+        const visibleItems = $('.faq-item:visible').length;
+        const totalItems = $('.faq-item').length;
+        
+        // Görünür öğe yoksa veya tüm öğeler görünürse farklı mesajlar göster
+        if (visibleItems === 0) {
+            $('#faq-count').text('Eşleşen sonuç bulunamadı');
+        } else if (visibleItems === totalItems) {
+            $('#faq-count').text(`Toplam ${totalItems} soru`);
+        } else {
+            $('#faq-count').text(`${totalItems} sorudan ${visibleItems} tanesi gösteriliyor`);
+        }
+    }
+
+    // Eşleşen sonuç yoksa kontrol et
+    function checkNoResults() {
+        if ($('.faq-item:visible').length === 0) {
+            $('.no-results').fadeIn();
+            $('.faq-list').hide();
+        } else {
+            $('.no-results').hide();
+            $('.faq-list').fadeIn();
+        }
+    }
+
+    // Hero bölümü için parçacıklar oluştur
+    createParticles();
+
+    // Parçacıklar oluşturma fonksiyonu
+    function createParticles() {
+        const particlesContainer = document.querySelector('.hero-particles');
+        if (!particlesContainer) return; // Eğer container yoksa fonksiyondan çık
+        
+        // CSS'de z-index sorunu olmaması için kontrol et
+        if (window.getComputedStyle(particlesContainer).zIndex === 'auto') {
+            particlesContainer.style.zIndex = '0'; // z-index otomatikse 0 olarak ayarla
+        }
+        
+        const particleCount = 50;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Rastgele pozisyon ve boyut
+            const size = Math.random() * 5 + 1;
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            const delay = Math.random() * 5;
+            const duration = Math.random() * 10 + 10;
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${posX}%`;
+            particle.style.top = `${posY}%`;
+            particle.style.animationDelay = `${delay}s`;
+            particle.style.animationDuration = `${duration}s`;
+            
+            // z-index'i 0 olarak ayarla - hero-content'in üstünü kapatmaması için
+            particle.style.zIndex = '0';
+            
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    // Butonlar için dalgalanma efekti 
+    initRippleEffect();
+
+    // Dalgalanma efekti başlatma fonksiyonu
+    function initRippleEffect() {
+        const buttons = document.querySelectorAll('.contact-btn, .download-btn, .view-btn');
+        
+        buttons.forEach(button => {
+            // Butonun position'ı relative değilse ripple efekti çalışmaz
+            if (window.getComputedStyle(button).position !== 'relative') {
+                button.style.position = 'relative';
+                button.style.overflow = 'hidden';
+            }
+            
+            button.addEventListener('mousedown', function(e) {
+                // Buton içinde tıklama pozisyonunu hesapla
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Dalgalanma efekti için span elementi oluştur
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                // Span'ı butona ekle
+                this.appendChild(ripple);
+                
+                // Animasyon tamamlandıktan sonra span'ı kaldır
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    }
+
+    // Görünürlük algılama - sayfa kaydırma animasyonları
+    if ('IntersectionObserver' in window) {
+        const animatedElements = document.querySelectorAll('.faq-item, .faq-header, .category-item, .contact-text');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+    } else {
+        // IntersectionObserver desteklenmeyen tarayıcılar için fallback
+        // Tüm animasyon sınıflarını doğrudan ekle
+        document.querySelectorAll('.faq-item, .faq-header, .category-item, .contact-text').forEach(el => {
+            el.classList.add('animate-fade-in');
+        });
+    }
+
+    
+    
+    // İlk akordiyon öğesini otomatik olarak açmak isterseniz yorum satırından çıkarın
+    // $('.faq-question:first').trigger('click');
+});

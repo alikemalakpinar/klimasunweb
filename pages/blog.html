@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Blog Modal -->
+    <div class="blog-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-content">
+                <div class="modal-text">
+                    <div class="modal-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span></span>
+                    </div>
+                    <h2 class="modal-title"></h2>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <div class="modal-meta">
+                            <div class="reading-time">
+                                Okuma süresi <span class="minutes">5 Dakika</span>
+                            </div>
+                            <div class="interactions">
+                                <button class="like-btn" aria-label="Bu makaleyi beğen" aria-pressed="false"><i class="far fa-heart"></i> <span>0</span></button>
+                                <button class="share-btn" aria-label="Bu makaleyi paylaş"><i class="fas fa-share-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Klimasun Blog</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Endüstriyel otomasyon, teknoloji ve çözümler hakkında en güncel bilgiler</p>
+        </div>
+    </div>
+
+    <div class="blog-page-container">
+        <!-- Featured Post Section -->
+        <div class="featured-post-section" data-post-id="featured">
+            <div class="featured-image">
+                <img src="../images/anasayfa3.jpg" alt="Öne Çıkan Blog Görseli">
+                <div class="category-tag">Öne Çıkan</div>
+                <div class="image-overlay-text">
+                    <div class="divider">---</div>
+                    <h1>BAKIM VE ONARIM<br>ALANINDA <span class="highlight">SATIN ALMA<br>İŞ BİRLİKLERİNİN<br>GERÇEK HİKAYESİ</span></h1>
+                </div>
+            </div>
+            <div class="featured-content">
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i> 17 Şubat 2025
+                </div>
+                <h2>Bakım ve Onarım Alanında Satın Alma İş Birliklerinin Gerçek Hikayesi</h2>
+                <p class="excerpt">
+                    Bakım alanında çalışan herkes, eskimiş parçaları bulma sürecinin ne kadar zorlu olduğunu bilir. Eksik bir bileşen tüm operasyonu durdurabilir ve aniden üretimi sürdürmek için telaşa kapılırsınız. İşte bu noktada güçlü iş birlikleri paha biçilmez hale gelir[...]
+                </p>
+                <div class="post-meta">
+                    <div class="reading-time">
+                        Okuma süresi <span class="minutes">5 Dakika</span>
+                    </div>
+                    <a href="#" class="read-more-btn">Devamını oku <i class="fas fa-arrow-right"></i></a>
+                    <div class="interactions">
+                        <button class="like-btn" aria-label="Bu makaleyi beğen" aria-pressed="false"><i class="far fa-heart"></i> <span>15</span></button>
+                        <button class="share-btn" aria-label="Bu makaleyi paylaş"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- More Articles Section -->
+        <div class="more-articles-section">
+            <div class="section-header">
+                <h3 class="section-title">Diğer Makaleler</h3>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="article-grid">
+                <!-- Article Card 1 -->
+                <div class="article-card" data-post-id="summer-shutdown">
+                    <div class="card-image">
+                        <img src="../images/blog1.jpg" alt="Makale 1">
+                        <div class="date-badge">
+                            <span class="month">Haz</span>
+                            <span class="day">12</span>
+                        </div>
+                        <div class="card-overlay-text">
+                             YAZ DÖNEMİ FABRİKA KAPANIŞLARI YAKLAŞIYOR: KLİMASUN ÖNERİLERİ
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">Bakım</span>
+                            <span class="tag">Planlama</span>
+                        </div>
+                        <h4>Klimasun'dan üreticilere yaz bakım önerileri...</h4>
+                        <p>Yaz dönemi fabrika kapanışlarının önemi: Klimasun, üreticilerin yaz dönemi fabrika kapanışlarına hazırlanmalarını tavsiye ediyor. Yöneticilere planlı bakım için makine parçalarını stoklamaları ve kesinti süresini azaltmaları öneriliyor[...]</p>
+                        <div class="card-footer">
+                            <a href="#" class="read-more-link">Devamını oku <i class="fas fa-arrow-right"></i></a>
+                            <button class="like-btn-card" aria-label="Bu makaleyi beğen" aria-pressed="false"><i class="far fa-heart"></i> <span>35</span></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Article Card 2 -->
+                <div class="article-card" data-post-id="lead-times">
+                    <div class="card-image">
+                        <img src="../images/blog2.jpg" alt="Makale 2">
+                         <div class="date-badge">
+                            <span class="month">Şub</span>
+                            <span class="day">06</span>
+                        </div>
+                         <div class="card-overlay-text">
+                            UZUN TESLİMAT SÜRELERİNİ AŞMANIN YOLLARI
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">Tedarik</span>
+                            <span class="tag">Satın Alma</span>
+                        </div>
+                        <h4>Uzun Teslimat Sürelerini Aşmanın Yolları</h4>
+                        <p>Uzun teslimat süreleri hepimizi etkiliyor, ancak bunların sebep olduğu sorunları aşmanın yolları var. Sektörümüzdeki en büyük sorunlardan biri, tedarikçilerin sipariş kazanmak için bilerek daha kısa teslimat süresi vermesidir. Klimasun'da ise[...]</p>
+                         <div class="card-footer">
+                            <a href="#" class="read-more-link">Devamını oku <i class="fas fa-arrow-right"></i></a>
+                            <button class="like-btn-card" aria-label="Bu makaleyi beğen" aria-pressed="false"><i class="far fa-heart"></i> <span>27</span></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Article Card 3 -->
+                <div class="article-card" data-post-id="counterfeit-parts">
+                    <div class="card-image">
+                        <img src="../images/anasayfa.png" alt="Makale 3">
+                         <div class="date-badge">
+                            <span class="month">Eyl</span>
+                            <span class="day">28</span>
+                        </div>
+                         <div class="card-overlay-text">
+                           TEDARİK ZİNCİRİNDE SAHTE PARÇALARI TESPİT ETMEK
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">Güvenlik</span>
+                            <span class="tag">Kalite</span>
+                        </div>
+                        <h4>Sahte Parçaları Tespit Etme Rehberi</h4>
+                        <p>Sahte bileşenler sadece ucuz taklitlerden ibaret değildir. Otomatik endüstriyel parçaların kusursuz etkileşimine bağlı üretim süreçleri için ciddi riskler oluştururlar. Bu standart altı bileşenler, ekipman arızalarına, üretim gecikmelerine[...]</p>
+                         <div class="card-footer">
+                            <a href="#" class="read-more-link">Devamını oku <i class="fas fa-arrow-right"></i></a>
+                            <button class="like-btn-card" aria-label="Bu makaleyi beğen" aria-pressed="false"><i class="far fa-heart"></i> <span>17</span></button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Add more article cards as needed -->
+            </div>
+            
+            <div class="pagination-wrapper">
+                <div class="pagination-controls">
+                    <button class="prev-btn" aria-label="Önceki sayfa"><i class="fas fa-chevron-left"></i></button>
+                    <div class="page-indicator">1 / 1</div>
+                    <button class="next-btn" aria-label="Sonraki sayfa"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Newsletter Section -->
+            <div class="newsletter-section">
+                <div class="newsletter-content">
+                    <h3>Güncel Kalalım</h3>
+                    <p>En son blog yazılarımız, sektör haberleri ve özel tekliflerimiz için abone olun.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="E-posta Adresiniz" required>
+                        <button type="submit">Abone Ol <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Style dependencies -->
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    
+    <!-- JavaScript -->
+    <script src="blog.js"></script>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("../components/header.html");
+            $("#footer-placeholder").load("../components/footer.html");
+        });
+    </script>
+</body>
+</html>

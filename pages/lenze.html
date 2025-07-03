@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Lenze</title>
+    <link rel="stylesheet" href="lenze.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="brand-hero">
+        <h1>LENZE</h1>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/anasayfa">Anasayfa</a>
+            <span>&gt;</span>
+            <a href="/ureticiler">Ürünlerimiz</a>
+            <span>&gt;</span>
+            <span>Lenze</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="brand-description">
+                <h2>LENZE</h2>
+                <p>Klimasun, Lenze'nin yenilikçi otomasyon çözümlerinin güvenilir tedarikçisidir. Lenze'nin endüstriyel sürücüler, motorlar, dişli kutuları, kontrol sistemleri ve yazılım çözümleri, modern endüstriyel otomasyon ihtiyaçlarınız için mükemmel çözümler sunar. Yüksek verimlilik, güvenilirlik ve enerji tasarrufu odaklı Lenze ürünleri, endüstriyel süreçlerinizi optimize etmenize ve üretkenliğinizi artırmanıza yardımcı olur.</p>
+            </div>
+
+            <!-- Product Filter Section -->
+            <div class="product-filter">
+                <div class="filter-left">
+                    <span>All Products</span>
+                    <div class="per-page">
+                        Per Page
+                        <select>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+                    <div class="product-search">
+                        <input type="text" placeholder="Search by part numbers">
+                    </div>
+                </div>
+                <div class="filter-right">
+                    <span>View</span>
+                    <button class="grid-view active"><i class="fas fa-th"></i></button>
+                    <button class="list-view"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Product Item 1 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/lenze-inverter.jpg" alt="Lenze Inverter">
+                    </div>
+                    <div class="product-info">
+                        <h3>E84AV5524VXO</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Lenze 8400 StateLine C Inverter, 5.5kW</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 2 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/lenze-servo.jpg" alt="Lenze Servo">
+                    </div>
+                    <div class="product-info">
+                        <h3>EVS9324-ES</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Lenze Servo Drive 9300 Series</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 3 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/lenze-motor.jpg" alt="Lenze Motor">
+                    </div>
+                    <div class="product-info">
+                        <h3>MDXMA080-32</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Lenze MCA Asynchronous Servo Motor</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 4 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/lenze-gearbox.jpg" alt="Lenze Gearbox">
+                    </div>
+                    <div class="product-info">
+                        <h3>GKR04-2M</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Lenze Right-Angle Gearbox</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="lenze.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("../components/header.html");
+            $("#footer-placeholder").load("../components/footer.html");
+        });
+    </script>
+</body>
+</html>

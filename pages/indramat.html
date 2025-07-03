@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Indramat</title>
+    <link rel="stylesheet" href="indramat.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="brand-hero">
+        <h1>INDRAMAT</h1>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/anasayfa">Anasayfa</a>
+            <span>&gt;</span>
+            <a href="/ureticiler">Ürünlerimiz</a>
+            <span>&gt;</span>
+            <span>Indramat</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="brand-description">
+                <h2>INDRAMAT</h2>
+                <p>Klimasun, Indramat (Bosch Rexroth'un bir parçası) ürünlerinin güvenilir tedarikçisi olarak, endüstriyel otomasyon ve hareket kontrol sistemleri alanında kapsamlı çözümler sunmaktadır. Indramat'ın yüksek performanslı servo motorları, sürücüleri ve kontrol sistemleri, hassas hareket kontrolü ve güvenilir operasyon gerektiren uygulamalar için idealdir. Üstün Alman mühendisliği ile üretilen Indramat ürünleri, uzun ömürlü ve verimli çalışma garantisi sunar.</p>
+            </div>
+
+            <!-- Product Filter Section -->
+            <div class="product-filter">
+                <div class="filter-left">
+                    <span>All Products</span>
+                    <div class="per-page">
+                        Per Page
+                        <select>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+                    <div class="product-search">
+                        <input type="text" placeholder="Search by part numbers">
+                    </div>
+                </div>
+                <div class="filter-right">
+                    <span>View</span>
+                    <button class="grid-view active"><i class="fas fa-th"></i></button>
+                    <button class="list-view"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Product Item 1 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/indramat-servo.jpg" alt="Indramat Servo Motor">
+                    </div>
+                    <div class="product-info">
+                        <h3>MKD071B-061-KG1-KN</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Indramat Permanent Magnet Motor</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 2 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/indramat-drive.jpg" alt="Indramat Drive">
+                    </div>
+                    <div class="product-info">
+                        <h3>DKC11.3-040-7-FW</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">ECODRIVE03 Digital Servo Drive</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 3 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/indramat-controller.jpg" alt="Indramat Controller">
+                    </div>
+                    <div class="product-info">
+                        <h3>CLM01.3-X-0-4-0</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">IndraControl L Motion Controller</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 4 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/indramat-power.jpg" alt="Indramat Power Supply">
+                    </div>
+                    <div class="product-info">
+                        <h3>HMV01.1R-W0120</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Power Supply Module</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="indramat.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("../components/header.html");
+            $("#footer-placeholder").load("../components/footer.html");
+        });
+    </script>
+</body>
+</html> 

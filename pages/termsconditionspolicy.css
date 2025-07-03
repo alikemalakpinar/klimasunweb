@@ -1,0 +1,138 @@
+/* Terms Hero Section */
+.terms-hero {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url('../images/anasayfa2.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #FFD700;
+}
+
+/* Terms Content Section */
+.terms-content {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.terms-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.terms-section {
+    margin-bottom: 40px;
+}
+
+.terms-section:last-child {
+    margin-bottom: 0;
+}
+
+.terms-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+.terms-section ol {
+    list-style-type: decimal;
+    padding-left: 25px;
+    margin: 0;
+}
+
+.terms-section li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.terms-section li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .terms-hero {
+        height: 250px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .terms-section h2 {
+        font-size: 24px;
+    }
+
+    .terms-section li {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .terms-hero {
+        height: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .terms-section h2 {
+        font-size: 22px;
+    }
+
+    .terms-section li {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .terms-container {
+        padding: 0 15px;
+    }
+}

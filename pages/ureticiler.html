@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üreticiler - Klimasun</title>
+    <link rel="stylesheet" href="ureticiler.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <div class="page-content" id="ureticiler">
+        <div class="banner-section">
+            <img src="../images/ureticiler.png" alt="Üreticiler Banner" class="banner-image">
+            <div class="banner-content animate__animated animate__fadeIn">
+                <h1>ÜRETİCİLER</h1>
+                <div class="banner-divider"></div>
+                <p>Geniş bir üretici marka yelpazesiyle çalışıyoruz. Kendi envanterimizi sürdürüyor ve özenle seçilmiş geniş bir marka uzmanları ağıyla iş birliği yapıyoruz. Bu sayede, karmaşık tedarikçi listelerine olan ihtiyacı azaltırken <span class="highlight">zamandan ve paradan tasarruf etmenizi</span> sağlıyoruz.</p>
+                <p>Ekipmanınızın tüm yaşam döngüsü boyunca <span class="highlight">kapsamlı destek</span> sunuyoruz. İster yeni sistemler için <span class="highlight">güncel parçalara</span> ihtiyacınız olsun, ister eski veya kullanımdan kaldırılmış makineler için <span class="highlight">bulunması zor bileşenlere</span> ihtiyacınız olsun, biz yanınızdayız.</p>
+            </div>
+        </div>
+
+        <div class="featured-brands">
+            <h2>ÖNE ÇIKAN<br>MARKALAR</h2>
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">Tümü</button>
+                <button class="filter-btn" data-category="automation">Otomasyon</button>
+                <button class="filter-btn" data-category="electric">Elektrik</button>
+                <button class="filter-btn" data-category="controls">Kontrol</button>
+            </div>
+            <div class="brands-grid">
+                <a href="allenbradley.html" class="brand-card" data-category="automation controls">
+                    <div class="brand-image-container">
+                        <img src="../images/allen-bradley.png" alt="ALLEN BRADLEY" loading="lazy">
+                    </div>
+                    <div class="brand-info">
+                        <h3>ALLEN BRADLEY</h3>
+                        <p class="brand-description">Endüstriyel otomasyon ve kontrol ürünleri</p>
+                        <span class="view-products">Tüm Ürünleri Görüntüle <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </a>
+                <a href="siemens.html" class="brand-card" data-category="automation electric">
+                    <div class="brand-image-container">
+                        <img src="../images/siemens.png" alt="SIEMENS" loading="lazy">
+                    </div>
+                    <div class="brand-info">
+                        <h3>SIEMENS</h3>
+                        <p class="brand-description">Otomasyon, sürücü teknolojisi ve endüstriyel yazılım</p>
+                        <span class="view-products">Tüm Ürünleri Görüntüle <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </a>
+                <a href="lenze.html" class="brand-card" data-category="electric controls">
+                    <div class="brand-image-container">
+                        <img src="../images/lenze.png" alt="LENZE" loading="lazy">
+                    </div>
+                    <div class="brand-info">
+                        <h3>LENZE</h3>
+                        <p class="brand-description">Sürücüler ve otomasyon çözümleri</p>
+                        <span class="view-products">Tüm Ürünleri Görüntüle <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </a>
+                <a href="schneiderelectrics.html" class="brand-card" data-category="electric automation">
+                    <div class="brand-image-container">
+                        <img src="../images/schneider.png" alt="SCHNEIDER ELECTRIC" loading="lazy">
+                    </div>
+                    <div class="brand-info">
+                        <h3>SCHNEIDER ELECTRIC</h3>
+                        <p class="brand-description">Enerji yönetimi ve otomasyon çözümleri</p>
+                        <span class="view-products">Tüm Ürünleri Görüntüle <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </a>
+                <a href="mitsibushielectric.html" class="brand-card" data-category="automation controls">
+                    <div class="brand-image-container">
+                        <img src="../images/mitsubishi.png" alt="MITSUBISHI ELECTRIC" loading="lazy">
+                    </div>
+                    <div class="brand-info">
+                        <h3>MITSUBISHI ELECTRIC</h3>
+                        <p class="brand-description">Fabrika otomasyonu ve kontrol sistemleri</p>
+                        <span class="view-products">Tüm Ürünleri Görüntüle <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </a>
+                <a href="indramat.html" class="brand-card" data-category="controls electric">
+                    <div class="brand-image-container">
+                        <img src="../images/indramat.png" alt="INDRAMAT" loading="lazy">
+                    </div>
+                    <div class="brand-info">
+                        <h3>INDRAMAT</h3>
+                        <p class="brand-description">Elektrikli sürücü ve kontrol çözümleri</p>
+                        <span class="view-products">Tüm Ürünleri Görüntüle <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </a>
+            </div>
+            <div id="no-results" class="no-results-message" style="display: none;">
+                <i class="fas fa-search"></i>
+                <p>Aramanızla eşleşen üretici bulunamadı.</p>
+                <p>Başka bir arama terimi deneyin veya mevcut tüm markalara göz atın.</p>
+            </div>
+            <button id="load-more" class="load-more-btn">Daha Fazla Marka Yükle</button>
+        </div>
+
+        <div class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Üretici adına göre ara" class="search-input" id="brand-search">
+                    <button class="clear-search" id="clear-search"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="search-tags">
+                    <span class="search-tag" data-term="otomasyon">Otomasyon</span>
+                    <span class="search-tag" data-term="elektrik">Elektrik</span>
+                    <span class="search-tag" data-term="kontrol">Kontrol Sistemleri</span>
+                    <span class="search-tag" data-term="sürücü">Sürücüler</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="showed-section">
+            <div class="showed-container">
+                <h2>ARADIĞINIZ ÜRETİCİ<br>GÖRÜNMÜYOR MU?</h2>
+                <div class="divider"></div>
+                <p>Sorun değil. Sıklıkla nadir ve daha az bilinen<br>üreticiler için talepler alıyoruz. Yardımcı olmak için bekleyen dostane bir ekibimiz var. Sorun ve elimizden gelen her şeyi yapacağız.</p>
+                <div class="button-group">
+                    <a href="#" class="view-btn"><i class="fas fa-cube"></i>ÜRÜNLERİ GÖRÜNTÜLE</a>
+                    <a href="#" class="quote-btn" id="quote-request"><i class="fas fa-file-alt"></i>HIZLI TEKLİF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Quote Modal -->
+        <div id="quote-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Hızlı Teklif İsteği</h2>
+                <form id="quote-form">
+                    <div class="form-group">
+                        <label for="company-name">Şirket Adı</label>
+                        <input type="text" id="company-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-name">İlgili Kişi</label>
+                        <input type="text" id="contact-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="manufacturer">Üretici</label>
+                        <input type="text" id="manufacturer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-details">Ürün Detayları</label>
+                        <textarea id="product-details" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Teklif İsteği Gönder</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <button id="back-to-top" title="Yukarı çık"><i class="fas fa-arrow-up"></i></button>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("../components/header.html");
+            $("#footer-placeholder").load("../components/footer.html");
+        });
+    </script>
+    <script src="ureticiler.js"></script>
+</body>
+</html>

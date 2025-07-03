@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimasun - Schneider Electric</title>
+    <link rel="stylesheet" href="schneiderelectrics.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <div class="brand-hero">
+        <h1>SCHNEIDER ELECTRIC</h1>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/anasayfa">Anasayfa</a>
+            <span>&gt;</span>
+            <a href="/ureticiler">Ürünlerimiz</a>
+            <span>&gt;</span>
+            <span>Schneider Electric</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="brand-description">
+                <h2>SCHNEIDER ELECTRIC</h2>
+                <p>Klimasun, Schneider Electric'in güvenilir çözüm ortağı olarak, endüstriyel otomasyon ve enerji yönetimi alanında geniş bir ürün yelpazesi sunmaktadır. Schneider Electric'in yenilikçi teknolojileri, akıllı kontrol sistemleri, güç dağıtım çözümleri ve otomasyon ekipmanları ile işletmenizin verimliliğini artırın. Enerji tasarrufu, sürdürülebilirlik ve dijital dönüşüm hedeflerinize ulaşmanız için ihtiyacınız olan tüm Schneider Electric ürünleri Klimasun güvencesiyle.</p>
+            </div>
+
+            <!-- Product Filter Section -->
+            <div class="product-filter">
+                <div class="filter-left">
+                    <span>All Products</span>
+                    <div class="per-page">
+                        Per Page
+                        <select>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                        </select>
+                    </div>
+                    <div class="product-search">
+                        <input type="text" placeholder="Search by part numbers">
+                    </div>
+                </div>
+                <div class="filter-right">
+                    <span>View</span>
+                    <button class="grid-view active"><i class="fas fa-th"></i></button>
+                    <button class="list-view"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Product Item 1 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/schneider-plc.jpg" alt="Schneider PLC">
+                    </div>
+                    <div class="product-info">
+                        <h3>TM241CE40R</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Modicon M241 Logic Controller, 40 I/O</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 2 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/schneider-drive.jpg" alt="Schneider Drive">
+                    </div>
+                    <div class="product-info">
+                        <h3>ATV320U15M2C</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Altivar 320 Variable Speed Drive, 1.5kW</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 3 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/schneider-hmi.jpg" alt="Schneider HMI">
+                    </div>
+                    <div class="product-info">
+                        <h3>HMIGTO5310</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">Harmony GTU 10.4" Touch Panel</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product Item 4 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="../images/products/schneider-contactor.jpg" alt="Schneider Contactor">
+                    </div>
+                    <div class="product-info">
+                        <h3>LC1D25M7</h3>
+                        <p class="availability">Available</p>
+                        <p class="description">TeSys D Contactor, 25A, 220V AC</p>
+                        <button class="quick-quote">Quick Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="schneiderelectrics.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("../components/header.html");
+            $("#footer-placeholder").load("../components/footer.html");
+        });
+    </script>
+</body>
+</html>
